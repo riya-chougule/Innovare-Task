@@ -821,3 +821,1001 @@ max           NaN       NaN        NaN            2009-11-28 00:00:00    NaN    
 2025-08-12 11:58:45,433 — INFO — Starting feature engineering SQL execution in BigQuery
 2025-08-12 11:58:46,600 — INFO — Feature engineering SQL executed successfully, view updated.
 2025-08-12 11:58:46,601 — INFO — Pipeline completed successfully
+2025-08-12 16:31:37,693 — INFO — Starting Innovare Task Pipeline
+2025-08-12 16:31:37,694 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/student_demographics.csv
+2025-08-12 16:31:37,698 — INFO — Loaded data shape: (20, 10)
+2025-08-12 16:31:37,698 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/gradebook_export.csv
+2025-08-12 16:31:37,700 — INFO — Loaded data shape: (22, 5)
+2025-08-12 16:31:37,700 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/attendance_records.csv
+2025-08-12 16:31:37,702 — INFO — Loaded data shape: (23, 6)
+2025-08-12 16:31:37,702 — INFO — Starting data cleaning pipeline
+2025-08-12 16:31:37,702 — INFO — Cleaning demographics data
+2025-08-12 16:31:37,702 — INFO — Cleaning ELL status
+2025-08-12 16:31:37,703 — INFO — Cleaning FRL status
+2025-08-12 16:31:37,703 — INFO — Cleaning date column: DOB
+2025-08-12 16:31:37,730 — INFO — Data Summary:
+       student_id last_name first_name                            DOB gender ELL_Status IEP_Status FRL_Status enrollment_status notes
+count          20        20         20                             14     20         19         18         20                20    18
+unique         20        20         20                            NaN      3          3          2          3                 3     2
+top     SID-94321    Garcia       Alex                            NaN      F         No      False       TRUE            Active     \
+freq            1         1          1                            NaN     11         14         12         10                18    17
+mean          NaN       NaN        NaN  2009-06-11 06:51:25.714285824    NaN        NaN        NaN        NaN               NaN   NaN
+min           NaN       NaN        NaN            2009-01-30 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+25%           NaN       NaN        NaN            2009-03-27 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+50%           NaN       NaN        NaN            2009-06-01 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+75%           NaN       NaN        NaN            2009-07-29 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+max           NaN       NaN        NaN            2009-11-28 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+2025-08-12 16:31:37,730 — INFO — Cleaning gradebook data with parameterized grade ranges
+2025-08-12 16:31:37,733 — INFO — Dropped 1 rows due to invalid grades
+2025-08-12 16:31:37,733 — INFO — Cleaning attendance status
+2025-08-12 16:31:37,734 — INFO — Data cleaning pipeline completed
+2025-08-12 16:31:37,734 — INFO — Starting data transformation pipeline
+2025-08-12 16:31:37,734 — INFO — Transforming demographics data
+2025-08-12 16:31:37,734 — INFO — Normalizing student_id
+2025-08-12 16:31:37,735 — INFO — Extracting start date
+2025-08-12 16:31:37,735 — INFO — Transforming grades data
+2025-08-12 16:31:37,735 — INFO — Normalizing student_id
+2025-08-12 16:31:37,736 — INFO — Converting grade to numeric
+2025-08-12 16:31:37,736 — INFO — Transforming attendance data
+2025-08-12 16:31:37,736 — INFO — Normalizing student_id
+2025-08-12 16:31:37,737 — INFO — Extracting start date
+2025-08-12 16:31:37,737 — INFO — Data transformation pipeline completed
+2025-08-12 16:31:37,737 — INFO — Running data quality checks
+2025-08-12 16:31:37,737 — WARNING — Duplicate student_id values found in Grades data: 16 duplicates
+2025-08-12 16:31:37,738 — INFO — Removed 10 duplicate rows from Grades data
+2025-08-12 16:31:37,738 — WARNING — Duplicate student_id values found in Attendance data: 16 duplicates
+2025-08-12 16:31:37,739 — INFO — Removed 10 duplicate rows from Attendance data
+2025-08-12 16:31:37,739 — INFO — All data quality checks passed
+2025-08-12 16:31:37,739 — INFO — Starting feature engineering SQL execution in BigQuery
+2025-08-12 16:31:40,745 — WARNING — Compute Engine Metadata server unavailable on attempt 1 of 3. Reason: timed out
+2025-08-12 16:31:43,747 — WARNING — Compute Engine Metadata server unavailable on attempt 2 of 3. Reason: timed out
+2025-08-12 16:31:43,748 — WARNING — Compute Engine Metadata server unavailable on attempt 3 of 3. Reason: [Errno 64] Host is down
+2025-08-12 16:31:43,748 — WARNING — Authentication failed using Compute Engine authentication due to unavailable metadata server.
+2025-08-12 16:31:43,748 — ERROR — Feature engineering step failed: Could not automatically determine credentials. Please set GOOGLE_APPLICATION_CREDENTIALS or explicitly create credentials and re-run the application. For more information, please see https://cloud.google.com/docs/authentication/getting-started
+2025-08-12 16:33:24,987 — INFO — Starting Innovare Task Pipeline
+2025-08-12 16:33:24,987 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/student_demographics.csv
+2025-08-12 16:33:24,997 — INFO — Loaded data shape: (20, 10)
+2025-08-12 16:33:24,997 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/gradebook_export.csv
+2025-08-12 16:33:24,999 — INFO — Loaded data shape: (22, 5)
+2025-08-12 16:33:25,000 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/attendance_records.csv
+2025-08-12 16:33:25,002 — INFO — Loaded data shape: (23, 6)
+2025-08-12 16:33:25,002 — INFO — Starting data cleaning pipeline
+2025-08-12 16:33:25,002 — INFO — Cleaning demographics data
+2025-08-12 16:33:25,002 — INFO — Cleaning ELL status
+2025-08-12 16:33:25,004 — INFO — Cleaning FRL status
+2025-08-12 16:33:25,004 — INFO — Cleaning date column: DOB
+2025-08-12 16:33:25,056 — INFO — Data Summary:
+       student_id last_name first_name                            DOB gender ELL_Status IEP_Status FRL_Status enrollment_status notes
+count          20        20         20                             14     20         19         18         20                20    18
+unique         20        20         20                            NaN      3          3          2          3                 3     2
+top     SID-94321    Garcia       Alex                            NaN      F         No      False       TRUE            Active     \
+freq            1         1          1                            NaN     11         14         12         10                18    17
+mean          NaN       NaN        NaN  2009-06-11 06:51:25.714285824    NaN        NaN        NaN        NaN               NaN   NaN
+min           NaN       NaN        NaN            2009-01-30 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+25%           NaN       NaN        NaN            2009-03-27 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+50%           NaN       NaN        NaN            2009-06-01 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+75%           NaN       NaN        NaN            2009-07-29 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+max           NaN       NaN        NaN            2009-11-28 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+2025-08-12 16:33:25,056 — INFO — Cleaning gradebook data with parameterized grade ranges
+2025-08-12 16:33:25,061 — INFO — Dropped 1 rows due to invalid grades
+2025-08-12 16:33:25,061 — INFO — Cleaning attendance status
+2025-08-12 16:33:25,063 — INFO — Data cleaning pipeline completed
+2025-08-12 16:33:25,063 — INFO — Starting data transformation pipeline
+2025-08-12 16:33:25,063 — INFO — Transforming demographics data
+2025-08-12 16:33:25,063 — INFO — Normalizing student_id
+2025-08-12 16:33:25,064 — INFO — Extracting start date
+2025-08-12 16:33:25,064 — INFO — Transforming grades data
+2025-08-12 16:33:25,064 — INFO — Normalizing student_id
+2025-08-12 16:33:25,065 — INFO — Converting grade to numeric
+2025-08-12 16:33:25,065 — INFO — Transforming attendance data
+2025-08-12 16:33:25,065 — INFO — Normalizing student_id
+2025-08-12 16:33:25,066 — INFO — Extracting start date
+2025-08-12 16:33:25,066 — INFO — Data transformation pipeline completed
+2025-08-12 16:33:25,066 — INFO — Running data quality checks
+2025-08-12 16:33:25,067 — WARNING — Duplicate student_id values found in Grades data: 16 duplicates
+2025-08-12 16:33:25,068 — INFO — Removed 10 duplicate rows from Grades data
+2025-08-12 16:33:25,068 — WARNING — Duplicate student_id values found in Attendance data: 16 duplicates
+2025-08-12 16:33:25,069 — INFO — Removed 10 duplicate rows from Attendance data
+2025-08-12 16:33:25,069 — INFO — All data quality checks passed
+2025-08-12 16:33:25,069 — INFO — Starting feature engineering SQL execution in BigQuery
+2025-08-12 16:33:25,243 — ERROR — Failed to run feature engineering SQL: ('invalid_grant: Invalid JWT Signature.', {'error': 'invalid_grant', 'error_description': 'Invalid JWT Signature.'})
+2025-08-12 16:33:25,243 — ERROR — Feature engineering step failed: ('invalid_grant: Invalid JWT Signature.', {'error': 'invalid_grant', 'error_description': 'Invalid JWT Signature.'})
+2025-08-12 16:34:08,995 — INFO — Starting Innovare Task Pipeline
+2025-08-12 16:34:08,995 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/student_demographics.csv
+2025-08-12 16:34:09,003 — INFO — Loaded data shape: (20, 10)
+2025-08-12 16:34:09,003 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/gradebook_export.csv
+2025-08-12 16:34:09,005 — INFO — Loaded data shape: (22, 5)
+2025-08-12 16:34:09,005 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/attendance_records.csv
+2025-08-12 16:34:09,007 — INFO — Loaded data shape: (23, 6)
+2025-08-12 16:34:09,007 — INFO — Starting data cleaning pipeline
+2025-08-12 16:34:09,007 — INFO — Cleaning demographics data
+2025-08-12 16:34:09,007 — INFO — Cleaning ELL status
+2025-08-12 16:34:09,009 — INFO — Cleaning FRL status
+2025-08-12 16:34:09,009 — INFO — Cleaning date column: DOB
+2025-08-12 16:34:09,048 — INFO — Data Summary:
+       student_id last_name first_name                            DOB gender ELL_Status IEP_Status FRL_Status enrollment_status notes
+count          20        20         20                             14     20         19         18         20                20    18
+unique         20        20         20                            NaN      3          3          2          3                 3     2
+top     SID-94321    Garcia       Alex                            NaN      F         No      False       TRUE            Active     \
+freq            1         1          1                            NaN     11         14         12         10                18    17
+mean          NaN       NaN        NaN  2009-06-11 06:51:25.714285824    NaN        NaN        NaN        NaN               NaN   NaN
+min           NaN       NaN        NaN            2009-01-30 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+25%           NaN       NaN        NaN            2009-03-27 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+50%           NaN       NaN        NaN            2009-06-01 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+75%           NaN       NaN        NaN            2009-07-29 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+max           NaN       NaN        NaN            2009-11-28 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+2025-08-12 16:34:09,048 — INFO — Cleaning gradebook data with parameterized grade ranges
+2025-08-12 16:34:09,050 — INFO — Dropped 1 rows due to invalid grades
+2025-08-12 16:34:09,051 — INFO — Cleaning attendance status
+2025-08-12 16:34:09,052 — INFO — Data cleaning pipeline completed
+2025-08-12 16:34:09,052 — INFO — Starting data transformation pipeline
+2025-08-12 16:34:09,052 — INFO — Transforming demographics data
+2025-08-12 16:34:09,052 — INFO — Normalizing student_id
+2025-08-12 16:34:09,053 — INFO — Extracting start date
+2025-08-12 16:34:09,053 — INFO — Transforming grades data
+2025-08-12 16:34:09,053 — INFO — Normalizing student_id
+2025-08-12 16:34:09,054 — INFO — Converting grade to numeric
+2025-08-12 16:34:09,055 — INFO — Transforming attendance data
+2025-08-12 16:34:09,055 — INFO — Normalizing student_id
+2025-08-12 16:34:09,055 — INFO — Extracting start date
+2025-08-12 16:34:09,055 — INFO — Data transformation pipeline completed
+2025-08-12 16:34:09,055 — INFO — Running data quality checks
+2025-08-12 16:34:09,056 — WARNING — Duplicate student_id values found in Grades data: 16 duplicates
+2025-08-12 16:34:09,057 — INFO — Removed 10 duplicate rows from Grades data
+2025-08-12 16:34:09,057 — WARNING — Duplicate student_id values found in Attendance data: 16 duplicates
+2025-08-12 16:34:09,058 — INFO — Removed 10 duplicate rows from Attendance data
+2025-08-12 16:34:09,058 — INFO — All data quality checks passed
+2025-08-12 16:34:09,058 — INFO — Starting feature engineering SQL execution in BigQuery
+2025-08-12 16:34:09,212 — ERROR — Failed to run feature engineering SQL: ('invalid_grant: Invalid JWT Signature.', {'error': 'invalid_grant', 'error_description': 'Invalid JWT Signature.'})
+2025-08-12 16:34:09,212 — ERROR — Feature engineering step failed: ('invalid_grant: Invalid JWT Signature.', {'error': 'invalid_grant', 'error_description': 'Invalid JWT Signature.'})
+2025-08-12 16:35:32,067 — INFO — Starting Innovare Task Pipeline
+2025-08-12 16:35:32,067 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/student_demographics.csv
+2025-08-12 16:35:32,078 — INFO — Loaded data shape: (20, 10)
+2025-08-12 16:35:32,078 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/gradebook_export.csv
+2025-08-12 16:35:32,080 — INFO — Loaded data shape: (22, 5)
+2025-08-12 16:35:32,080 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/attendance_records.csv
+2025-08-12 16:35:32,082 — INFO — Loaded data shape: (23, 6)
+2025-08-12 16:35:32,082 — INFO — Starting data cleaning pipeline
+2025-08-12 16:35:32,082 — INFO — Cleaning demographics data
+2025-08-12 16:35:32,082 — INFO — Cleaning ELL status
+2025-08-12 16:35:32,084 — INFO — Cleaning FRL status
+2025-08-12 16:35:32,084 — INFO — Cleaning date column: DOB
+2025-08-12 16:35:32,119 — INFO — Data Summary:
+       student_id last_name first_name                            DOB gender ELL_Status IEP_Status FRL_Status enrollment_status notes
+count          20        20         20                             14     20         19         18         20                20    18
+unique         20        20         20                            NaN      3          3          2          3                 3     2
+top     SID-94321    Garcia       Alex                            NaN      F         No      False       TRUE            Active     \
+freq            1         1          1                            NaN     11         14         12         10                18    17
+mean          NaN       NaN        NaN  2009-06-11 06:51:25.714285824    NaN        NaN        NaN        NaN               NaN   NaN
+min           NaN       NaN        NaN            2009-01-30 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+25%           NaN       NaN        NaN            2009-03-27 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+50%           NaN       NaN        NaN            2009-06-01 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+75%           NaN       NaN        NaN            2009-07-29 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+max           NaN       NaN        NaN            2009-11-28 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+2025-08-12 16:35:32,119 — INFO — Cleaning gradebook data with parameterized grade ranges
+2025-08-12 16:35:32,122 — INFO — Dropped 1 rows due to invalid grades
+2025-08-12 16:35:32,122 — INFO — Cleaning attendance status
+2025-08-12 16:35:32,124 — INFO — Data cleaning pipeline completed
+2025-08-12 16:35:32,124 — INFO — Starting data transformation pipeline
+2025-08-12 16:35:32,124 — INFO — Transforming demographics data
+2025-08-12 16:35:32,124 — INFO — Normalizing student_id
+2025-08-12 16:35:32,125 — INFO — Extracting start date
+2025-08-12 16:35:32,125 — INFO — Transforming grades data
+2025-08-12 16:35:32,125 — INFO — Normalizing student_id
+2025-08-12 16:35:32,125 — INFO — Converting grade to numeric
+2025-08-12 16:35:32,126 — INFO — Transforming attendance data
+2025-08-12 16:35:32,126 — INFO — Normalizing student_id
+2025-08-12 16:35:32,126 — INFO — Extracting start date
+2025-08-12 16:35:32,126 — INFO — Data transformation pipeline completed
+2025-08-12 16:35:32,127 — INFO — Running data quality checks
+2025-08-12 16:35:32,128 — WARNING — Duplicate student_id values found in Grades data: 16 duplicates
+2025-08-12 16:35:32,128 — INFO — Removed 10 duplicate rows from Grades data
+2025-08-12 16:35:32,128 — WARNING — Duplicate student_id values found in Attendance data: 16 duplicates
+2025-08-12 16:35:32,129 — INFO — Removed 10 duplicate rows from Attendance data
+2025-08-12 16:35:32,129 — INFO — All data quality checks passed
+2025-08-12 16:35:32,129 — INFO — Starting feature engineering SQL execution in BigQuery
+2025-08-12 16:35:32,130 — ERROR — Feature engineering step failed: File /Users/riya/Desktop/Test-task/Innovare-Task/service_account_file.json was not found.
+2025-08-12 16:36:41,336 — INFO — Starting Innovare Task Pipeline
+2025-08-12 16:36:41,336 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/student_demographics.csv
+2025-08-12 16:36:41,345 — INFO — Loaded data shape: (20, 10)
+2025-08-12 16:36:41,345 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/gradebook_export.csv
+2025-08-12 16:36:41,347 — INFO — Loaded data shape: (22, 5)
+2025-08-12 16:36:41,347 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/attendance_records.csv
+2025-08-12 16:36:41,349 — INFO — Loaded data shape: (23, 6)
+2025-08-12 16:36:41,350 — INFO — Starting data cleaning pipeline
+2025-08-12 16:36:41,350 — INFO — Cleaning demographics data
+2025-08-12 16:36:41,350 — INFO — Cleaning ELL status
+2025-08-12 16:36:41,351 — INFO — Cleaning FRL status
+2025-08-12 16:36:41,352 — INFO — Cleaning date column: DOB
+2025-08-12 16:36:41,389 — INFO — Data Summary:
+       student_id last_name first_name                            DOB gender ELL_Status IEP_Status FRL_Status enrollment_status notes
+count          20        20         20                             14     20         19         18         20                20    18
+unique         20        20         20                            NaN      3          3          2          3                 3     2
+top     SID-94321    Garcia       Alex                            NaN      F         No      False       TRUE            Active     \
+freq            1         1          1                            NaN     11         14         12         10                18    17
+mean          NaN       NaN        NaN  2009-06-11 06:51:25.714285824    NaN        NaN        NaN        NaN               NaN   NaN
+min           NaN       NaN        NaN            2009-01-30 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+25%           NaN       NaN        NaN            2009-03-27 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+50%           NaN       NaN        NaN            2009-06-01 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+75%           NaN       NaN        NaN            2009-07-29 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+max           NaN       NaN        NaN            2009-11-28 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+2025-08-12 16:36:41,389 — INFO — Cleaning gradebook data with parameterized grade ranges
+2025-08-12 16:36:41,393 — INFO — Dropped 1 rows due to invalid grades
+2025-08-12 16:36:41,393 — INFO — Cleaning attendance status
+2025-08-12 16:36:41,394 — INFO — Data cleaning pipeline completed
+2025-08-12 16:36:41,394 — INFO — Starting data transformation pipeline
+2025-08-12 16:36:41,395 — INFO — Transforming demographics data
+2025-08-12 16:36:41,395 — INFO — Normalizing student_id
+2025-08-12 16:36:41,395 — INFO — Extracting start date
+2025-08-12 16:36:41,395 — INFO — Transforming grades data
+2025-08-12 16:36:41,396 — INFO — Normalizing student_id
+2025-08-12 16:36:41,396 — INFO — Converting grade to numeric
+2025-08-12 16:36:41,397 — INFO — Transforming attendance data
+2025-08-12 16:36:41,397 — INFO — Normalizing student_id
+2025-08-12 16:36:41,397 — INFO — Extracting start date
+2025-08-12 16:36:41,398 — INFO — Data transformation pipeline completed
+2025-08-12 16:36:41,398 — INFO — Running data quality checks
+2025-08-12 16:36:41,399 — WARNING — Duplicate student_id values found in Grades data: 16 duplicates
+2025-08-12 16:36:41,400 — INFO — Removed 10 duplicate rows from Grades data
+2025-08-12 16:36:41,400 — WARNING — Duplicate student_id values found in Attendance data: 16 duplicates
+2025-08-12 16:36:41,401 — INFO — Removed 10 duplicate rows from Attendance data
+2025-08-12 16:36:41,401 — INFO — All data quality checks passed
+2025-08-12 16:36:41,402 — INFO — Starting feature engineering SQL execution in BigQuery
+2025-08-12 16:36:41,557 — ERROR — Failed to run feature engineering SQL: ('invalid_grant: Invalid JWT Signature.', {'error': 'invalid_grant', 'error_description': 'Invalid JWT Signature.'})
+2025-08-12 16:36:41,557 — ERROR — Feature engineering step failed: ('invalid_grant: Invalid JWT Signature.', {'error': 'invalid_grant', 'error_description': 'Invalid JWT Signature.'})
+2025-08-12 16:38:56,086 — INFO — Starting Innovare Task Pipeline
+2025-08-12 16:38:56,087 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/student_demographics.csv
+2025-08-12 16:38:56,095 — INFO — Loaded data shape: (20, 10)
+2025-08-12 16:38:56,096 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/gradebook_export.csv
+2025-08-12 16:38:56,098 — INFO — Loaded data shape: (22, 5)
+2025-08-12 16:38:56,098 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/attendance_records.csv
+2025-08-12 16:38:56,100 — INFO — Loaded data shape: (23, 6)
+2025-08-12 16:38:56,100 — INFO — Starting data cleaning pipeline
+2025-08-12 16:38:56,100 — INFO — Cleaning demographics data
+2025-08-12 16:38:56,100 — INFO — Cleaning ELL status
+2025-08-12 16:38:56,102 — INFO — Cleaning FRL status
+2025-08-12 16:38:56,102 — INFO — Cleaning date column: DOB
+2025-08-12 16:38:56,139 — INFO — Data Summary:
+       student_id last_name first_name                            DOB gender ELL_Status IEP_Status FRL_Status enrollment_status notes
+count          20        20         20                             14     20         19         18         20                20    18
+unique         20        20         20                            NaN      3          3          2          3                 3     2
+top     SID-94321    Garcia       Alex                            NaN      F         No      False       TRUE            Active     \
+freq            1         1          1                            NaN     11         14         12         10                18    17
+mean          NaN       NaN        NaN  2009-06-11 06:51:25.714285824    NaN        NaN        NaN        NaN               NaN   NaN
+min           NaN       NaN        NaN            2009-01-30 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+25%           NaN       NaN        NaN            2009-03-27 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+50%           NaN       NaN        NaN            2009-06-01 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+75%           NaN       NaN        NaN            2009-07-29 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+max           NaN       NaN        NaN            2009-11-28 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+2025-08-12 16:38:56,139 — INFO — Cleaning gradebook data with parameterized grade ranges
+2025-08-12 16:38:56,142 — INFO — Dropped 1 rows due to invalid grades
+2025-08-12 16:38:56,142 — INFO — Cleaning attendance status
+2025-08-12 16:38:56,144 — INFO — Data cleaning pipeline completed
+2025-08-12 16:38:56,144 — INFO — Starting data transformation pipeline
+2025-08-12 16:38:56,144 — INFO — Transforming demographics data
+2025-08-12 16:38:56,144 — INFO — Normalizing student_id
+2025-08-12 16:38:56,145 — INFO — Extracting start date
+2025-08-12 16:38:56,145 — INFO — Transforming grades data
+2025-08-12 16:38:56,145 — INFO — Normalizing student_id
+2025-08-12 16:38:56,146 — INFO — Converting grade to numeric
+2025-08-12 16:38:56,146 — INFO — Transforming attendance data
+2025-08-12 16:38:56,146 — INFO — Normalizing student_id
+2025-08-12 16:38:56,147 — INFO — Extracting start date
+2025-08-12 16:38:56,147 — INFO — Data transformation pipeline completed
+2025-08-12 16:38:56,147 — INFO — Running data quality checks
+2025-08-12 16:38:56,149 — WARNING — Duplicate student_id values found in Grades data: 16 duplicates
+2025-08-12 16:38:56,149 — INFO — Removed 10 duplicate rows from Grades data
+2025-08-12 16:38:56,150 — WARNING — Duplicate student_id values found in Attendance data: 16 duplicates
+2025-08-12 16:38:56,150 — INFO — Removed 10 duplicate rows from Attendance data
+2025-08-12 16:38:56,151 — INFO — All data quality checks passed
+2025-08-12 16:38:56,151 — INFO — Starting feature engineering SQL execution in BigQuery
+2025-08-12 16:38:56,319 — ERROR — Failed to run feature engineering SQL: ('invalid_grant: Invalid JWT Signature.', {'error': 'invalid_grant', 'error_description': 'Invalid JWT Signature.'})
+2025-08-12 16:38:56,320 — ERROR — Feature engineering step failed: ('invalid_grant: Invalid JWT Signature.', {'error': 'invalid_grant', 'error_description': 'Invalid JWT Signature.'})
+2025-08-12 16:39:17,135 — INFO — Starting Innovare Task Pipeline
+2025-08-12 16:39:17,135 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/student_demographics.csv
+2025-08-12 16:39:17,144 — INFO — Loaded data shape: (20, 10)
+2025-08-12 16:39:17,144 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/gradebook_export.csv
+2025-08-12 16:39:17,146 — INFO — Loaded data shape: (22, 5)
+2025-08-12 16:39:17,147 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/attendance_records.csv
+2025-08-12 16:39:17,149 — INFO — Loaded data shape: (23, 6)
+2025-08-12 16:39:17,149 — INFO — Starting data cleaning pipeline
+2025-08-12 16:39:17,149 — INFO — Cleaning demographics data
+2025-08-12 16:39:17,149 — INFO — Cleaning ELL status
+2025-08-12 16:39:17,151 — INFO — Cleaning FRL status
+2025-08-12 16:39:17,151 — INFO — Cleaning date column: DOB
+2025-08-12 16:39:17,185 — INFO — Data Summary:
+       student_id last_name first_name                            DOB gender ELL_Status IEP_Status FRL_Status enrollment_status notes
+count          20        20         20                             14     20         19         18         20                20    18
+unique         20        20         20                            NaN      3          3          2          3                 3     2
+top     SID-94321    Garcia       Alex                            NaN      F         No      False       TRUE            Active     \
+freq            1         1          1                            NaN     11         14         12         10                18    17
+mean          NaN       NaN        NaN  2009-06-11 06:51:25.714285824    NaN        NaN        NaN        NaN               NaN   NaN
+min           NaN       NaN        NaN            2009-01-30 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+25%           NaN       NaN        NaN            2009-03-27 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+50%           NaN       NaN        NaN            2009-06-01 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+75%           NaN       NaN        NaN            2009-07-29 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+max           NaN       NaN        NaN            2009-11-28 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+2025-08-12 16:39:17,185 — INFO — Cleaning gradebook data with parameterized grade ranges
+2025-08-12 16:39:17,189 — INFO — Dropped 1 rows due to invalid grades
+2025-08-12 16:39:17,189 — INFO — Cleaning attendance status
+2025-08-12 16:39:17,190 — INFO — Data cleaning pipeline completed
+2025-08-12 16:39:17,191 — INFO — Starting data transformation pipeline
+2025-08-12 16:39:17,191 — INFO — Transforming demographics data
+2025-08-12 16:39:17,191 — INFO — Normalizing student_id
+2025-08-12 16:39:17,191 — INFO — Extracting start date
+2025-08-12 16:39:17,191 — INFO — Transforming grades data
+2025-08-12 16:39:17,191 — INFO — Normalizing student_id
+2025-08-12 16:39:17,192 — INFO — Converting grade to numeric
+2025-08-12 16:39:17,192 — INFO — Transforming attendance data
+2025-08-12 16:39:17,193 — INFO — Normalizing student_id
+2025-08-12 16:39:17,193 — INFO — Extracting start date
+2025-08-12 16:39:17,193 — INFO — Data transformation pipeline completed
+2025-08-12 16:39:17,193 — INFO — Running data quality checks
+2025-08-12 16:39:17,195 — WARNING — Duplicate student_id values found in Grades data: 16 duplicates
+2025-08-12 16:39:17,196 — INFO — Removed 10 duplicate rows from Grades data
+2025-08-12 16:39:17,196 — WARNING — Duplicate student_id values found in Attendance data: 16 duplicates
+2025-08-12 16:39:17,197 — INFO — Removed 10 duplicate rows from Attendance data
+2025-08-12 16:39:17,197 — INFO — All data quality checks passed
+2025-08-12 16:39:17,197 — INFO — Starting feature engineering SQL execution in BigQuery
+2025-08-12 16:39:18,517 — INFO — Feature engineering SQL executed successfully, view updated.
+2025-08-12 16:39:18,518 — INFO — Pipeline completed successfully
+2025-08-12 17:22:06,389 — INFO — Starting Innovare Task Pipeline
+2025-08-12 17:22:06,389 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/student_demographics.csv
+2025-08-12 17:22:06,394 — INFO — Loaded data shape: (20, 10)
+2025-08-12 17:22:06,394 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/gradebook_export.csv
+2025-08-12 17:22:06,395 — INFO — Loaded data shape: (22, 5)
+2025-08-12 17:22:06,396 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/attendance_records.csv
+2025-08-12 17:22:06,397 — INFO — Loaded data shape: (23, 6)
+2025-08-12 17:22:06,397 — INFO — Starting data cleaning pipeline
+2025-08-12 17:22:06,397 — INFO — Cleaning demographics data
+2025-08-12 17:22:06,397 — INFO — Cleaning ELL status
+2025-08-12 17:22:06,398 — INFO — Cleaning FRL status
+2025-08-12 17:22:06,398 — INFO — Cleaning date column: DOB
+2025-08-12 17:22:06,423 — INFO — Data Summary:
+       student_id last_name first_name                            DOB gender ELL_Status IEP_Status FRL_Status enrollment_status notes
+count          20        20         20                             14     20         19         18         20                20    18
+unique         20        20         20                            NaN      3          3          2          3                 3     2
+top     SID-94321    Garcia       Alex                            NaN      F         No      False       TRUE            Active     \
+freq            1         1          1                            NaN     11         14         12         10                18    17
+mean          NaN       NaN        NaN  2009-06-11 06:51:25.714285824    NaN        NaN        NaN        NaN               NaN   NaN
+min           NaN       NaN        NaN            2009-01-30 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+25%           NaN       NaN        NaN            2009-03-27 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+50%           NaN       NaN        NaN            2009-06-01 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+75%           NaN       NaN        NaN            2009-07-29 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+max           NaN       NaN        NaN            2009-11-28 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+2025-08-12 17:22:06,423 — INFO — Cleaning gradebook data with parameterized grade ranges
+2025-08-12 17:22:06,425 — INFO — Dropped 1 rows due to invalid grades
+2025-08-12 17:22:06,425 — INFO — Cleaning attendance status
+2025-08-12 17:22:06,426 — INFO — Data cleaning pipeline completed
+2025-08-12 17:22:06,426 — INFO — Starting data transformation pipeline
+2025-08-12 17:22:06,426 — INFO — Transforming demographics data
+2025-08-12 17:22:06,426 — INFO — Normalizing student_id
+2025-08-12 17:22:06,427 — INFO — Extracting start date
+2025-08-12 17:22:06,427 — INFO — Transforming grades data
+2025-08-12 17:22:06,427 — INFO — Normalizing student_id
+2025-08-12 17:22:06,427 — INFO — Converting grade to numeric
+2025-08-12 17:22:06,428 — INFO — Transforming attendance data
+2025-08-12 17:22:06,428 — INFO — Normalizing student_id
+2025-08-12 17:22:06,428 — INFO — Extracting start date
+2025-08-12 17:22:06,428 — INFO — Data transformation pipeline completed
+2025-08-12 17:22:06,428 — INFO — Running data quality checks
+2025-08-12 17:22:06,429 — WARNING — Duplicate student_id values found in Grades data: 16 duplicates
+2025-08-12 17:22:06,429 — INFO — Removed 10 duplicate rows from Grades data
+2025-08-12 17:22:06,430 — WARNING — Duplicate student_id values found in Attendance data: 16 duplicates
+2025-08-12 17:22:06,430 — INFO — Removed 10 duplicate rows from Attendance data
+2025-08-12 17:22:06,430 — INFO — All data quality checks passed
+2025-08-12 17:22:06,431 — INFO — Starting to join demographics, grades, and attendance data
+2025-08-12 17:22:06,437 — INFO — Unified data shape after joins: (20, 20)
+2025-08-12 17:22:06,437 — INFO — Loading data to BigQuery table raw_student_data.cleaned_merged_student_data in project bamboo-zone-468620-k8
+2025-08-12 17:22:11,944 — INFO — 20 out of 20 rows loaded.
+2025-08-12 17:22:11,944 — INFO — Loaded 20 rows to raw_student_data.cleaned_merged_student_data
+2025-08-12 17:22:11,945 — INFO — Starting feature engineering SQL execution in BigQuery
+2025-08-12 17:22:12,886 — INFO — Feature engineering SQL executed successfully, view updated.
+2025-08-12 17:22:12,887 — INFO — Pipeline completed successfully
+2025-08-12 18:14:34,280 — INFO — Starting Innovare Task Pipeline
+2025-08-12 18:14:34,280 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/student_demographics.csv
+2025-08-12 18:14:34,287 — INFO — Loaded data shape: (20, 10)
+2025-08-12 18:14:34,287 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/gradebook_export.csv
+2025-08-12 18:14:34,288 — INFO — Loaded data shape: (22, 5)
+2025-08-12 18:14:34,288 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/attendance_records.csv
+2025-08-12 18:14:34,290 — INFO — Loaded data shape: (23, 6)
+2025-08-12 18:14:34,290 — INFO — Starting data cleaning pipeline
+2025-08-12 18:14:34,290 — INFO — Cleaning demographics data
+2025-08-12 18:14:34,290 — INFO — Cleaning ELL status
+2025-08-12 18:14:34,291 — INFO — Cleaning FRL status
+2025-08-12 18:14:34,291 — INFO — Cleaning date column: DOB
+2025-08-12 18:14:34,331 — INFO — Data Summary:
+       student_id last_name first_name                            DOB gender ELL_Status IEP_Status FRL_Status enrollment_status notes
+count          20        20         20                             14     20         19         18         20                20    18
+unique         20        20         20                            NaN      3          3          2          3                 3     2
+top     SID-94321    Garcia       Alex                            NaN      F         No      False       TRUE            Active     \
+freq            1         1          1                            NaN     11         14         12         10                18    17
+mean          NaN       NaN        NaN  2009-06-11 06:51:25.714285824    NaN        NaN        NaN        NaN               NaN   NaN
+min           NaN       NaN        NaN            2009-01-30 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+25%           NaN       NaN        NaN            2009-03-27 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+50%           NaN       NaN        NaN            2009-06-01 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+75%           NaN       NaN        NaN            2009-07-29 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+max           NaN       NaN        NaN            2009-11-28 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+2025-08-12 18:14:34,331 — INFO — Cleaning gradebook data with parameterized grade ranges
+2025-08-12 18:14:34,333 — INFO — Dropped 1 rows due to invalid grades
+2025-08-12 18:14:34,333 — INFO — Cleaning attendance status
+2025-08-12 18:14:34,355 — INFO — ######################  Data cleaning pipeline completed ###########################
+2025-08-12 18:14:34,355 — INFO — Starting data transformation pipeline
+2025-08-12 18:14:34,355 — INFO — Transforming demographics data
+2025-08-12 18:14:34,355 — INFO — Normalizing student_id
+2025-08-12 18:14:34,356 — INFO — Extracting start date
+2025-08-12 18:14:34,356 — INFO — Transforming grades data
+2025-08-12 18:14:34,356 — INFO — Normalizing student_id
+2025-08-12 18:14:34,356 — INFO — Converting grade to numeric
+2025-08-12 18:14:34,356 — INFO — Transforming attendance data
+2025-08-12 18:14:34,357 — INFO — Normalizing student_id
+2025-08-12 18:14:34,357 — INFO — Extracting start date
+2025-08-12 18:14:34,357 — INFO — Data transformation pipeline completed
+2025-08-12 18:14:34,357 — INFO — Running data quality checks
+2025-08-12 18:14:34,358 — WARNING — Duplicate student_id values found in Grades data: 16 duplicates
+2025-08-12 18:14:34,358 — INFO — Removed 10 duplicate rows from Grades data
+2025-08-12 18:14:34,359 — WARNING — Duplicate student_id values found in Attendance data: 16 duplicates
+2025-08-12 18:14:34,359 — INFO — Removed 10 duplicate rows from Attendance data
+2025-08-12 18:14:34,359 — INFO — All data quality checks passed
+2025-08-12 18:14:34,359 — INFO — Starting to join demographics, grades, and attendance data
+2025-08-12 18:14:34,367 — INFO — Unified data shape after joins: (20, 20)
+2025-08-12 18:14:34,367 — INFO — Loading data to BigQuery table raw_student_data.cleaned_merged_student_data in project bamboo-zone-468620-k8
+2025-08-12 18:14:37,542 — INFO — 20 out of 20 rows loaded.
+2025-08-12 18:14:37,543 — INFO — Loaded 20 rows to raw_student_data.cleaned_merged_student_data
+2025-08-12 18:14:37,543 — INFO — Starting feature engineering SQL execution in BigQuery
+2025-08-12 18:14:38,582 — INFO — Feature engineering SQL executed successfully, view updated.
+2025-08-12 18:14:38,582 — INFO — Pipeline completed successfully
+2025-08-12 18:16:23,840 — INFO — Starting Innovare Task Pipeline
+2025-08-12 18:16:23,841 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/student_demographics.csv
+2025-08-12 18:16:23,847 — INFO — Loaded data shape: (20, 10)
+2025-08-12 18:16:23,847 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/gradebook_export.csv
+2025-08-12 18:16:23,848 — INFO — Loaded data shape: (22, 5)
+2025-08-12 18:16:23,848 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/attendance_records.csv
+2025-08-12 18:16:23,850 — INFO — Loaded data shape: (23, 6)
+2025-08-12 18:16:23,850 — INFO — Starting data cleaning pipeline
+2025-08-12 18:16:23,850 — INFO — Cleaning demographics data
+2025-08-12 18:16:23,850 — INFO — Cleaning ELL status
+2025-08-12 18:16:23,852 — INFO — Cleaning FRL status
+2025-08-12 18:16:23,852 — INFO — Cleaning date column: DOB
+2025-08-12 18:16:23,876 — INFO — Data Summary:
+       student_id last_name first_name                            DOB gender ELL_Status IEP_Status FRL_Status enrollment_status notes
+count          20        20         20                             14     20         19         18         20                20    18
+unique         20        20         20                            NaN      3          3          2          3                 3     2
+top     SID-94321    Garcia       Alex                            NaN      F         No      False       TRUE            Active     \
+freq            1         1          1                            NaN     11         14         12         10                18    17
+mean          NaN       NaN        NaN  2009-06-11 06:51:25.714285824    NaN        NaN        NaN        NaN               NaN   NaN
+min           NaN       NaN        NaN            2009-01-30 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+25%           NaN       NaN        NaN            2009-03-27 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+50%           NaN       NaN        NaN            2009-06-01 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+75%           NaN       NaN        NaN            2009-07-29 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+max           NaN       NaN        NaN            2009-11-28 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+2025-08-12 18:16:23,876 — INFO — Cleaning gradebook data with parameterized grade ranges
+2025-08-12 18:16:23,878 — INFO — Dropped 1 rows due to invalid grades
+2025-08-12 18:16:23,878 — INFO — Cleaning attendance status
+2025-08-12 18:16:23,879 — INFO — Data cleaning pipeline completed
+2025-08-12 18:16:23,880 — INFO — Starting data transformation pipeline
+2025-08-12 18:16:23,880 — INFO — Transforming demographics data
+2025-08-12 18:16:23,880 — INFO — Normalizing student_id
+2025-08-12 18:16:23,880 — INFO — Extracting start date
+2025-08-12 18:16:23,880 — INFO — Transforming grades data
+2025-08-12 18:16:23,880 — INFO — Normalizing student_id
+2025-08-12 18:16:23,881 — INFO — Converting grade to numeric
+2025-08-12 18:16:23,881 — INFO — Transforming attendance data
+2025-08-12 18:16:23,881 — INFO — Normalizing student_id
+2025-08-12 18:16:23,881 — INFO — Extracting start date
+2025-08-12 18:16:23,882 — INFO — Data transformation pipeline completed
+2025-08-12 18:16:23,882 — INFO — Running data quality checks
+2025-08-12 18:16:23,883 — WARNING — Duplicate student_id values found in Grades data: 16 duplicates
+2025-08-12 18:16:23,883 — INFO — Removed 10 duplicate rows from Grades data
+2025-08-12 18:16:23,883 — WARNING — Duplicate student_id values found in Attendance data: 16 duplicates
+2025-08-12 18:16:23,884 — INFO — Removed 10 duplicate rows from Attendance data
+2025-08-12 18:16:23,884 — INFO — All data quality checks passed
+2025-08-12 18:16:23,900 — INFO — Starting to join demographics, grades, and attendance data
+2025-08-12 18:16:23,907 — INFO — Unified data shape after joins: (20, 20)
+2025-08-12 18:16:23,908 — INFO — Loading data to BigQuery table raw_student_data.cleaned_merged_student_data in project bamboo-zone-468620-k8
+2025-08-12 18:16:27,963 — INFO — 20 out of 20 rows loaded.
+2025-08-12 18:16:27,963 — INFO — Loaded 20 rows to raw_student_data.cleaned_merged_student_data
+2025-08-12 18:16:27,964 — INFO — Starting feature engineering SQL execution in BigQuery
+2025-08-12 18:16:28,710 — INFO — Feature engineering SQL executed successfully, view updated.
+2025-08-12 18:16:28,710 — INFO — Pipeline completed successfully
+2025-08-12 18:19:58,849 — INFO — Starting Innovare Task Pipeline
+2025-08-12 18:19:58,849 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/student_demographics.csv
+2025-08-12 18:19:58,856 — INFO — Loaded data shape: (20, 10)
+2025-08-12 18:19:58,856 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/gradebook_export.csv
+2025-08-12 18:19:58,857 — INFO — Loaded data shape: (22, 5)
+2025-08-12 18:19:58,857 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/attendance_records.csv
+2025-08-12 18:19:58,859 — INFO — Loaded data shape: (23, 6)
+2025-08-12 18:19:58,859 — INFO — Starting data cleaning pipeline
+2025-08-12 18:19:58,859 — INFO — Cleaning demographics data
+2025-08-12 18:19:58,859 — INFO — Cleaning ELL status
+2025-08-12 18:19:58,864 — INFO — Cleaning FRL status
+2025-08-12 18:20:37,539 — INFO — Starting Innovare Task Pipeline
+2025-08-12 18:20:37,540 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/student_demographics.csv
+2025-08-12 18:20:37,546 — INFO — Loaded data shape: (20, 10)
+2025-08-12 18:20:37,546 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/gradebook_export.csv
+2025-08-12 18:20:37,548 — INFO — Loaded data shape: (22, 5)
+2025-08-12 18:20:37,548 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/attendance_records.csv
+2025-08-12 18:20:37,549 — INFO — Loaded data shape: (23, 6)
+2025-08-12 18:20:37,549 — INFO — Starting data cleaning pipeline
+2025-08-12 18:20:37,549 — INFO — Cleaning demographics data
+2025-08-12 18:20:37,549 — INFO — Cleaning ELL status
+2025-08-12 18:20:37,551 — INFO — Cleaning FRL status
+2025-08-12 18:20:54,971 — INFO — Starting Innovare Task Pipeline
+2025-08-12 18:20:54,971 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/student_demographics.csv
+2025-08-12 18:20:54,974 — INFO — Loaded data shape: (20, 10)
+2025-08-12 18:20:54,975 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/gradebook_export.csv
+2025-08-12 18:20:54,976 — INFO — Loaded data shape: (22, 5)
+2025-08-12 18:20:54,976 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/attendance_records.csv
+2025-08-12 18:20:54,977 — INFO — Loaded data shape: (23, 6)
+2025-08-12 18:20:54,978 — INFO — Starting data cleaning pipeline
+2025-08-12 18:20:54,978 — INFO — Cleaning demographics data
+2025-08-12 18:20:54,978 — INFO — Cleaning ELL status
+2025-08-12 18:20:54,978 — INFO — Cleaning FRL status
+2025-08-12 18:22:09,121 — INFO — Starting Innovare Task Pipeline
+2025-08-12 18:22:09,121 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/student_demographics.csv
+2025-08-12 18:22:09,140 — INFO — Loaded data shape: (20, 10)
+2025-08-12 18:22:09,141 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/gradebook_export.csv
+2025-08-12 18:22:09,142 — INFO — Loaded data shape: (22, 5)
+2025-08-12 18:22:09,142 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/attendance_records.csv
+2025-08-12 18:22:09,144 — INFO — Loaded data shape: (23, 6)
+2025-08-12 18:22:09,144 — INFO — Starting data cleaning pipeline
+2025-08-12 18:22:09,144 — INFO — Cleaning demographics data
+2025-08-12 18:22:09,144 — INFO — Cleaning ELL status
+2025-08-12 18:22:09,145 — INFO — Cleaning FRL status
+2025-08-12 18:22:09,145 — INFO — Cleaning date column: DOB
+2025-08-12 18:22:09,171 — INFO — Data Summary:
+       student_id last_name first_name                            DOB gender ELL_Status IEP_Status FRL_Status enrollment_status notes
+count          20        20         20                             14     20         19         18         20                20    18
+unique         20        20         20                            NaN      3          3          2          3                 3     2
+top     SID-94321    Garcia       Alex                            NaN      F         No      False       TRUE            Active     \
+freq            1         1          1                            NaN     11         14         12         10                18    17
+mean          NaN       NaN        NaN  2009-06-11 06:51:25.714285824    NaN        NaN        NaN        NaN               NaN   NaN
+min           NaN       NaN        NaN            2009-01-30 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+25%           NaN       NaN        NaN            2009-03-27 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+50%           NaN       NaN        NaN            2009-06-01 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+75%           NaN       NaN        NaN            2009-07-29 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+max           NaN       NaN        NaN            2009-11-28 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+2025-08-12 18:22:09,171 — INFO — Cleaning gradebook data with parameterized grade ranges
+2025-08-12 18:22:09,173 — INFO — Dropped 1 rows due to invalid grades
+2025-08-12 18:22:09,173 — INFO — Cleaning attendance status
+2025-08-12 18:22:09,175 — INFO — Data cleaning pipeline completed
+2025-08-12 18:22:09,175 — INFO — Starting data transformation pipeline
+2025-08-12 18:22:09,175 — INFO — Transforming demographics data
+2025-08-12 18:22:09,175 — INFO — Normalizing student_id
+2025-08-12 18:22:09,175 — INFO — Extracting start date
+2025-08-12 18:22:09,176 — INFO — Transforming grades data
+2025-08-12 18:22:09,176 — INFO — Normalizing student_id
+2025-08-12 18:22:09,176 — INFO — Converting grade to numeric
+2025-08-12 18:22:09,177 — INFO — Transforming attendance data
+2025-08-12 18:22:09,177 — INFO — Normalizing student_id
+2025-08-12 18:22:09,177 — INFO — Extracting start date
+2025-08-12 18:22:09,177 — INFO — Data transformation pipeline completed
+2025-08-12 18:22:09,178 — INFO — Running data quality checks
+2025-08-12 18:22:09,179 — WARNING — Duplicate student_id values found in Grades data: 16 duplicates
+2025-08-12 18:22:09,179 — INFO — Removed 10 duplicate rows from Grades data
+2025-08-12 18:22:09,179 — WARNING — Duplicate student_id values found in Attendance data: 16 duplicates
+2025-08-12 18:22:09,180 — INFO — Removed 10 duplicate rows from Attendance data
+2025-08-12 18:22:09,180 — INFO — All data quality checks passed
+2025-08-12 18:22:09,197 — INFO — Starting to join demographics, grades, and attendance data
+2025-08-12 18:22:09,197 — INFO — Starting to join demographics, grades, and attendance data
+2025-08-12 18:22:09,204 — INFO — Unified data shape after joins: (20, 20)
+2025-08-12 18:22:09,204 — INFO — Unified data shape after joins: (20, 20)
+2025-08-12 18:22:09,204 — INFO — Loading data to BigQuery table raw_student_data.cleaned_merged_student_data in project bamboo-zone-468620-k8
+2025-08-12 18:22:12,809 — INFO — 20 out of 20 rows loaded.
+2025-08-12 18:22:12,809 — INFO — Loaded 20 rows to raw_student_data.cleaned_merged_student_data
+2025-08-12 18:22:12,809 — INFO — Starting feature engineering SQL execution in BigQuery
+2025-08-12 18:22:13,494 — INFO — Feature engineering SQL executed successfully, view updated.
+2025-08-12 18:22:13,496 — INFO — Pipeline completed successfully
+2025-08-12 18:25:45,184 — INFO — Starting Innovare Task Pipeline
+2025-08-12 18:25:45,185 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/student_demographics.csv
+2025-08-12 18:25:45,191 — INFO — Loaded data shape: (20, 10)
+2025-08-12 18:25:45,191 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/gradebook_export.csv
+2025-08-12 18:25:45,193 — INFO — Loaded data shape: (22, 5)
+2025-08-12 18:25:45,193 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/attendance_records.csv
+2025-08-12 18:25:45,194 — INFO — Loaded data shape: (23, 6)
+2025-08-12 18:25:45,194 — INFO — Starting data cleaning pipeline
+2025-08-12 18:25:45,194 — INFO — Cleaning demographics data
+2025-08-12 18:25:45,194 — INFO — Cleaning ELL status
+2025-08-12 18:25:45,196 — INFO — Cleaning FRL status
+2025-08-12 18:25:45,196 — INFO — Cleaning date column: DOB
+2025-08-12 18:25:45,223 — INFO — Data Summary:
+       student_id last_name first_name                            DOB gender ELL_Status IEP_Status FRL_Status enrollment_status notes
+count          20        20         20                             14     20         19         18         20                20    18
+unique         20        20         20                            NaN      3          3          2          3                 3     2
+top     SID-94321    Garcia       Alex                            NaN      F         No      False       TRUE            Active     \
+freq            1         1          1                            NaN     11         14         12         10                18    17
+mean          NaN       NaN        NaN  2009-06-11 06:51:25.714285824    NaN        NaN        NaN        NaN               NaN   NaN
+min           NaN       NaN        NaN            2009-01-30 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+25%           NaN       NaN        NaN            2009-03-27 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+50%           NaN       NaN        NaN            2009-06-01 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+75%           NaN       NaN        NaN            2009-07-29 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+max           NaN       NaN        NaN            2009-11-28 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+2025-08-12 18:25:45,223 — INFO — Cleaning gradebook data with parameterized grade ranges
+2025-08-12 18:25:45,226 — INFO — Dropped 1 rows due to invalid grades
+2025-08-12 18:25:45,226 — INFO — Cleaning attendance status
+2025-08-12 18:25:45,227 — INFO — Cleaning attendance date column
+2025-08-12 18:25:45,228 — INFO — Cleaning student_id column
+2025-08-12 18:25:45,229 — INFO — Cleaning student_id column
+2025-08-12 18:25:45,230 — INFO — Cleaning student_id column
+2025-08-12 18:25:45,230 — INFO — Data cleaning pipeline completed
+2025-08-12 18:25:45,230 — INFO — Starting data transformation pipeline
+2025-08-12 18:25:45,230 — INFO — Transforming demographics data
+2025-08-12 18:25:45,230 — INFO — Normalizing student_id
+2025-08-12 18:25:45,231 — INFO — Extracting start date
+2025-08-12 18:25:45,231 — INFO — Transforming grades data
+2025-08-12 18:25:45,231 — INFO — Normalizing student_id
+2025-08-12 18:25:45,231 — INFO — Converting grade to numeric
+2025-08-12 18:25:45,231 — INFO — Transforming attendance data
+2025-08-12 18:25:45,231 — INFO — Normalizing student_id
+2025-08-12 18:25:45,232 — INFO — Extracting start date
+2025-08-12 18:25:45,232 — INFO — Data transformation pipeline completed
+2025-08-12 18:25:45,232 — INFO — Running data quality checks
+2025-08-12 18:25:45,233 — WARNING — Duplicate student_id values found in Grades data: 16 duplicates
+2025-08-12 18:25:45,233 — INFO — Removed 10 duplicate rows from Grades data
+2025-08-12 18:25:45,234 — WARNING — Duplicate student_id values found in Attendance data: 16 duplicates
+2025-08-12 18:25:45,234 — INFO — Removed 10 duplicate rows from Attendance data
+2025-08-12 18:25:45,235 — INFO — All data quality checks passed
+2025-08-12 18:25:45,250 — INFO — Starting to join demographics, grades, and attendance data
+2025-08-12 18:25:45,250 — INFO — Starting to join demographics, grades, and attendance data
+2025-08-12 18:25:45,258 — INFO — Unified data shape after joins: (20, 20)
+2025-08-12 18:25:45,258 — INFO — Unified data shape after joins: (20, 20)
+2025-08-12 18:25:45,259 — INFO — Loading data to BigQuery table raw_student_data.cleaned_merged_student_data in project bamboo-zone-468620-k8
+2025-08-12 18:25:49,479 — INFO — 20 out of 20 rows loaded.
+2025-08-12 18:25:49,479 — INFO — Loaded 20 rows to raw_student_data.cleaned_merged_student_data
+2025-08-12 18:25:49,479 — INFO — Starting feature engineering SQL execution in BigQuery
+2025-08-12 18:25:50,151 — INFO — Feature engineering SQL executed successfully, view updated.
+2025-08-12 18:25:50,152 — INFO — Pipeline completed successfully
+2025-08-12 18:28:49,453 — INFO — Starting Innovare Task Pipeline
+2025-08-12 18:28:49,453 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/student_demographics.csv
+2025-08-12 18:28:49,459 — INFO — Loaded data shape: (20, 10)
+2025-08-12 18:28:49,459 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/gradebook_export.csv
+2025-08-12 18:28:49,461 — INFO — Loaded data shape: (22, 5)
+2025-08-12 18:28:49,461 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/attendance_records.csv
+2025-08-12 18:28:49,462 — INFO — Loaded data shape: (23, 6)
+2025-08-12 18:28:49,462 — INFO — Starting data cleaning pipeline
+2025-08-12 18:28:49,462 — INFO — Cleaning demographics data
+2025-08-12 18:28:49,462 — INFO — Cleaning ELL status
+2025-08-12 18:28:49,464 — INFO — Cleaning FRL status
+2025-08-12 18:28:49,464 — INFO — Cleaning date column: DOB
+2025-08-12 18:28:49,491 — INFO — Data Summary:
+       student_id last_name first_name                            DOB gender ELL_Status IEP_Status FRL_Status enrollment_status notes
+count          20        20         20                             14     20         19         18         20                20    18
+unique         20        20         20                            NaN      3          3          2          3                 3     2
+top     SID-94321    Garcia       Alex                            NaN      F         No      False       TRUE            Active     \
+freq            1         1          1                            NaN     11         14         12         10                18    17
+mean          NaN       NaN        NaN  2009-06-11 06:51:25.714285824    NaN        NaN        NaN        NaN               NaN   NaN
+min           NaN       NaN        NaN            2009-01-30 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+25%           NaN       NaN        NaN            2009-03-27 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+50%           NaN       NaN        NaN            2009-06-01 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+75%           NaN       NaN        NaN            2009-07-29 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+max           NaN       NaN        NaN            2009-11-28 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+2025-08-12 18:28:49,491 — INFO — Cleaning gradebook data with parameterized grade ranges
+2025-08-12 18:28:49,493 — INFO — Dropped 1 rows due to invalid grades
+2025-08-12 18:28:49,494 — INFO — Cleaning attendance status
+2025-08-12 18:28:49,495 — INFO — Cleaning attendance date column
+2025-08-12 18:28:49,496 — INFO — Cleaning student_id column
+2025-08-12 18:28:49,496 — INFO — Cleaning student_id column
+2025-08-12 18:28:49,497 — INFO — Cleaning student_id column
+2025-08-12 18:28:49,498 — INFO — Data cleaning pipeline completed
+2025-08-12 18:28:49,498 — INFO — Starting data transformation pipeline
+2025-08-12 18:28:49,498 — INFO — Transforming demographics data
+2025-08-12 18:28:49,498 — INFO — Normalizing student_id
+2025-08-12 18:28:49,498 — INFO — Extracting start date
+2025-08-12 18:28:49,499 — INFO — Transforming grades data
+2025-08-12 18:28:49,499 — INFO — Normalizing student_id
+2025-08-12 18:28:49,499 — INFO — Converting grade to numeric
+2025-08-12 18:28:49,499 — INFO — Transforming attendance data
+2025-08-12 18:28:49,499 — INFO — Normalizing student_id
+2025-08-12 18:28:49,500 — INFO — Extracting start date
+2025-08-12 18:28:49,500 — INFO — Data transformation pipeline completed
+2025-08-12 18:28:49,500 — INFO — Running data quality checks
+2025-08-12 18:28:49,501 — WARNING — Duplicate student_id values found in Grades data: 16 duplicates
+2025-08-12 18:28:49,501 — INFO — Removed 10 duplicate rows from Grades data
+2025-08-12 18:28:49,502 — WARNING — Duplicate student_id values found in Attendance data: 16 duplicates
+2025-08-12 18:28:49,504 — INFO — Removed 10 duplicate rows from Attendance data
+2025-08-12 18:28:49,504 — INFO — All data quality checks passed
+2025-08-12 18:28:49,521 — INFO — Starting to join demographics, grades, and attendance data
+2025-08-12 18:28:49,521 — INFO — Starting to join demographics, grades, and attendance data
+2025-08-12 18:28:49,529 — INFO — Unified data shape after joins: (20, 20)
+2025-08-12 18:28:49,529 — INFO — Unified data shape after joins: (20, 20)
+2025-08-12 18:28:49,529 — INFO — Loading data to BigQuery table raw_student_data.cleaned_merged_student_data in project bamboo-zone-468620-k8
+2025-08-12 18:28:52,579 — INFO — 20 out of 20 rows loaded.
+2025-08-12 18:28:52,580 — INFO — Loaded 20 rows to raw_student_data.cleaned_merged_student_data
+2025-08-12 18:28:52,580 — INFO — Starting feature engineering SQL execution in BigQuery
+2025-08-12 18:28:53,370 — INFO — Feature engineering SQL executed successfully, view updated.
+2025-08-12 18:28:53,371 — INFO — Pipeline completed successfully
+2025-08-12 18:34:43,465 — INFO — Starting Innovare Task Pipeline
+2025-08-12 18:34:43,465 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/student_demographics.csv
+2025-08-12 18:34:43,473 — INFO — Loaded data shape: (20, 10)
+2025-08-12 18:34:43,473 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/gradebook_export.csv
+2025-08-12 18:34:43,474 — INFO — Loaded data shape: (22, 5)
+2025-08-12 18:34:43,474 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/attendance_records.csv
+2025-08-12 18:34:43,476 — INFO — Loaded data shape: (23, 6)
+2025-08-12 18:34:43,476 — INFO — Starting data cleaning pipeline
+2025-08-12 18:34:43,476 — INFO — Cleaning demographics data
+2025-08-12 18:34:43,476 — INFO — Cleaning ELL status
+2025-08-12 18:34:43,478 — INFO — Cleaning FRL status
+2025-08-12 18:34:43,478 — INFO — Cleaning date column: DOB
+2025-08-12 18:34:43,506 — INFO — Data Summary:
+       student_id last_name first_name                            DOB gender ELL_Status IEP_Status FRL_Status enrollment_status notes
+count          20        20         20                             14     20         19         18         20                20    18
+unique         20        20         20                            NaN      3          3          2          3                 3     2
+top     SID-94321    Garcia       Alex                            NaN      F         No      False       TRUE            Active     \
+freq            1         1          1                            NaN     11         14         12         10                18    17
+mean          NaN       NaN        NaN  2009-06-11 06:51:25.714285824    NaN        NaN        NaN        NaN               NaN   NaN
+min           NaN       NaN        NaN            2009-01-30 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+25%           NaN       NaN        NaN            2009-03-27 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+50%           NaN       NaN        NaN            2009-06-01 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+75%           NaN       NaN        NaN            2009-07-29 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+max           NaN       NaN        NaN            2009-11-28 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+2025-08-12 18:34:43,507 — INFO — Cleaning gradebook data with parameterized grade ranges
+2025-08-12 18:34:43,509 — INFO — Dropped 1 rows due to invalid grades
+2025-08-12 18:34:43,509 — INFO — Cleaning attendance status
+2025-08-12 18:34:43,510 — INFO — Cleaning attendance date column
+2025-08-12 18:34:43,511 — INFO — Cleaning student_id column
+2025-08-12 18:34:43,512 — INFO — Cleaning student_id column
+2025-08-12 18:34:43,513 — INFO — Cleaning student_id column
+2025-08-12 18:34:43,514 — INFO — Data cleaning pipeline completed
+2025-08-12 18:34:43,514 — INFO — Starting data transformation pipeline
+2025-08-12 18:34:43,514 — INFO — Transforming demographics data
+2025-08-12 18:34:43,514 — INFO — Normalizing student_id
+2025-08-12 18:34:43,514 — INFO — Extracting start date
+2025-08-12 18:34:43,515 — INFO — Transforming grades data
+2025-08-12 18:34:43,515 — INFO — Normalizing student_id
+2025-08-12 18:34:43,515 — INFO — Converting grade to numeric
+2025-08-12 18:34:43,515 — INFO — Transforming attendance data
+2025-08-12 18:34:43,515 — INFO — Normalizing student_id
+2025-08-12 18:34:43,516 — INFO — Extracting start date
+2025-08-12 18:34:43,516 — INFO — Data transformation pipeline completed
+2025-08-12 18:34:43,516 — INFO — Running data quality checks
+2025-08-12 18:34:43,517 — WARNING — Duplicate student_id values found in Grades data: 16 duplicates
+2025-08-12 18:34:43,517 — INFO — Removed 10 duplicate rows from Grades data
+2025-08-12 18:34:43,517 — WARNING — Duplicate student_id values found in Attendance data: 16 duplicates
+2025-08-12 18:34:43,519 — INFO — Removed 10 duplicate rows from Attendance data
+2025-08-12 18:34:43,519 — INFO — All data quality checks passed
+2025-08-12 18:34:43,534 — INFO — Starting to join demographics, grades, and attendance data
+2025-08-12 18:34:43,534 — INFO — Starting to join demographics, grades, and attendance data
+2025-08-12 18:34:43,545 — INFO — Unified data shape after joins: (20, 20)
+2025-08-12 18:34:43,545 — INFO — Unified data shape after joins: (20, 20)
+2025-08-12 18:34:43,545 — INFO — Loading data to BigQuery table raw_student_data.cleaned_merged_student_data in project bamboo-zone-468620-k8
+2025-08-12 18:34:46,442 — INFO — 20 out of 20 rows loaded.
+2025-08-12 18:34:46,442 — INFO — Loaded 20 rows to raw_student_data.cleaned_merged_student_data
+2025-08-12 18:34:46,442 — INFO — Starting feature engineering SQL execution in BigQuery
+2025-08-12 18:34:47,315 — INFO — Feature engineering SQL executed successfully, view updated.
+2025-08-12 18:34:47,315 — INFO — Pipeline completed successfully
+2025-08-12 18:35:39,761 — INFO — Starting Innovare Task Pipeline
+2025-08-12 18:35:39,762 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/student_demographics.csv
+2025-08-12 18:35:39,768 — INFO — Loaded data shape: (20, 10)
+2025-08-12 18:35:39,769 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/gradebook_export.csv
+2025-08-12 18:35:39,770 — INFO — Loaded data shape: (22, 5)
+2025-08-12 18:35:39,770 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/attendance_records.csv
+2025-08-12 18:35:39,772 — INFO — Loaded data shape: (23, 6)
+2025-08-12 18:35:39,772 — INFO — Starting data cleaning pipeline
+2025-08-12 18:35:39,772 — INFO — Cleaning demographics data
+2025-08-12 18:35:39,772 — INFO — Cleaning ELL status
+2025-08-12 18:35:39,773 — INFO — Cleaning FRL status
+2025-08-12 18:35:39,774 — INFO — Cleaning date column: DOB
+2025-08-12 18:35:39,800 — INFO — Data Summary:
+       student_id last_name first_name                            DOB gender ELL_Status IEP_Status FRL_Status enrollment_status notes
+count          20        20         20                             14     20         19         18         20                20    18
+unique         20        20         20                            NaN      3          3          2          3                 3     2
+top     SID-94321    Garcia       Alex                            NaN      F         No      False       TRUE            Active     \
+freq            1         1          1                            NaN     11         14         12         10                18    17
+mean          NaN       NaN        NaN  2009-06-11 06:51:25.714285824    NaN        NaN        NaN        NaN               NaN   NaN
+min           NaN       NaN        NaN            2009-01-30 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+25%           NaN       NaN        NaN            2009-03-27 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+50%           NaN       NaN        NaN            2009-06-01 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+75%           NaN       NaN        NaN            2009-07-29 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+max           NaN       NaN        NaN            2009-11-28 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+2025-08-12 18:35:39,800 — INFO — Cleaning gradebook data with parameterized grade ranges
+2025-08-12 18:35:39,803 — INFO — Dropped 1 rows due to invalid grades
+2025-08-12 18:35:39,803 — INFO — Cleaning attendance status
+2025-08-12 18:35:39,804 — INFO — Cleaning attendance date column
+2025-08-12 18:35:39,805 — INFO — Cleaning student_id column
+2025-08-12 18:35:39,806 — INFO — Cleaning student_id column
+2025-08-12 18:35:39,807 — INFO — Cleaning student_id column
+2025-08-12 18:35:39,807 — INFO — Data cleaning pipeline completed
+2025-08-12 18:35:39,807 — INFO — Starting data transformation pipeline
+2025-08-12 18:35:39,807 — INFO — Transforming demographics data
+2025-08-12 18:35:39,807 — INFO — Normalizing student_id
+2025-08-12 18:35:39,808 — INFO — Extracting start date
+2025-08-12 18:35:39,808 — INFO — Transforming grades data
+2025-08-12 18:35:39,808 — INFO — Normalizing student_id
+2025-08-12 18:35:39,808 — INFO — Converting grade to numeric
+2025-08-12 18:35:39,808 — INFO — Transforming attendance data
+2025-08-12 18:35:39,809 — INFO — Normalizing student_id
+2025-08-12 18:35:39,809 — INFO — Extracting start date
+2025-08-12 18:35:39,809 — INFO — Data transformation pipeline completed
+2025-08-12 18:35:39,809 — INFO — Running data quality checks
+2025-08-12 18:35:39,810 — WARNING — Duplicate student_id values found in Grades data: 16 duplicates
+2025-08-12 18:35:39,810 — INFO — Removed 10 duplicate rows from Grades data
+2025-08-12 18:35:39,811 — WARNING — Duplicate student_id values found in Attendance data: 16 duplicates
+2025-08-12 18:35:39,811 — INFO — Removed 10 duplicate rows from Attendance data
+2025-08-12 18:35:39,812 — INFO — All data quality checks passed
+2025-08-12 18:35:39,826 — INFO — Starting to join demographics, grades, and attendance data
+2025-08-12 18:35:39,826 — INFO — Starting to join demographics, grades, and attendance data
+2025-08-12 18:35:39,834 — INFO — Unified data shape after joins: (20, 20)
+2025-08-12 18:35:39,834 — INFO — Unified data shape after joins: (20, 20)
+2025-08-12 18:35:39,834 — INFO — Loading data to BigQuery table raw_student_data.cleaned_merged_student_data in project bamboo-zone-468620-k8
+2025-08-12 18:35:44,173 — INFO — 20 out of 20 rows loaded.
+2025-08-12 18:35:44,174 — INFO — Loaded 20 rows to raw_student_data.cleaned_merged_student_data
+2025-08-12 18:35:44,174 — INFO — Starting feature engineering SQL execution in BigQuery
+2025-08-12 18:35:44,972 — INFO — Feature engineering SQL executed successfully, view updated.
+2025-08-12 18:35:44,973 — INFO — Pipeline completed successfully
+2025-08-12 18:36:14,615 — INFO — Starting Innovare Task Pipeline
+2025-08-12 18:36:14,616 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/student_demographics.csv
+2025-08-12 18:36:14,623 — INFO — Loaded data shape: (20, 10)
+2025-08-12 18:36:14,623 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/gradebook_export.csv
+2025-08-12 18:36:14,624 — INFO — Loaded data shape: (22, 5)
+2025-08-12 18:36:14,624 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/attendance_records.csv
+2025-08-12 18:36:14,626 — INFO — Loaded data shape: (23, 6)
+2025-08-12 18:36:14,626 — INFO — Starting data cleaning pipeline
+2025-08-12 18:36:14,626 — INFO — Cleaning demographics data
+2025-08-12 18:36:14,626 — INFO — Cleaning ELL status
+2025-08-12 18:36:14,627 — INFO — Cleaning FRL status
+2025-08-12 18:36:14,627 — INFO — Cleaning date column: DOB
+2025-08-12 18:36:14,655 — INFO — Data Summary:
+       student_id last_name first_name                            DOB gender ELL_Status IEP_Status FRL_Status enrollment_status notes
+count          20        20         20                             14     20         19         18         20                20    18
+unique         20        20         20                            NaN      3          3          2          3                 3     2
+top     SID-94321    Garcia       Alex                            NaN      F         No      False       TRUE            Active     \
+freq            1         1          1                            NaN     11         14         12         10                18    17
+mean          NaN       NaN        NaN  2009-06-11 06:51:25.714285824    NaN        NaN        NaN        NaN               NaN   NaN
+min           NaN       NaN        NaN            2009-01-30 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+25%           NaN       NaN        NaN            2009-03-27 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+50%           NaN       NaN        NaN            2009-06-01 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+75%           NaN       NaN        NaN            2009-07-29 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+max           NaN       NaN        NaN            2009-11-28 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+2025-08-12 18:36:14,656 — INFO — Cleaning gradebook data with parameterized grade ranges
+2025-08-12 18:36:14,658 — INFO — Dropped 1 rows due to invalid grades
+2025-08-12 18:36:14,658 — INFO — Cleaning attendance status
+2025-08-12 18:36:14,659 — INFO — Cleaning attendance date column
+2025-08-12 18:36:14,661 — INFO — Cleaning student_id column
+2025-08-12 18:36:14,661 — INFO — Cleaning student_id column
+2025-08-12 18:36:14,662 — INFO — Cleaning student_id column
+2025-08-12 18:36:14,663 — INFO — Data cleaning pipeline completed
+2025-08-12 18:36:14,663 — INFO — Starting data transformation pipeline
+2025-08-12 18:36:14,663 — INFO — Transforming demographics data
+2025-08-12 18:36:14,663 — INFO — Normalizing student_id
+2025-08-12 18:36:14,663 — INFO — Extracting start date
+2025-08-12 18:36:14,663 — INFO — Transforming grades data
+2025-08-12 18:36:14,663 — INFO — Normalizing student_id
+2025-08-12 18:36:14,664 — INFO — Converting grade to numeric
+2025-08-12 18:36:14,664 — INFO — Transforming attendance data
+2025-08-12 18:36:14,664 — INFO — Normalizing student_id
+2025-08-12 18:36:14,664 — INFO — Extracting start date
+2025-08-12 18:36:14,664 — INFO — Data transformation pipeline completed
+2025-08-12 18:36:14,664 — INFO — Running data quality checks
+2025-08-12 18:36:14,666 — WARNING — Duplicate student_id values found in Grades data: 16 duplicates
+2025-08-12 18:36:14,666 — INFO — Removed 10 duplicate rows from Grades data
+2025-08-12 18:36:14,666 — WARNING — Duplicate student_id values found in Attendance data: 16 duplicates
+2025-08-12 18:36:14,667 — INFO — Removed 10 duplicate rows from Attendance data
+2025-08-12 18:36:14,667 — INFO — All data quality checks passed
+2025-08-12 18:36:14,682 — INFO — Starting to join demographics, grades, and attendance data
+2025-08-12 18:36:14,682 — INFO — Starting to join demographics, grades, and attendance data
+2025-08-12 18:36:14,692 — INFO — Unified data shape after joins: (20, 20)
+2025-08-12 18:36:14,692 — INFO — Unified data shape after joins: (20, 20)
+2025-08-12 18:36:14,692 — INFO — Loading data to BigQuery table raw_student_data.cleaned_merged_student_data in project bamboo-zone-468620-k8
+2025-08-12 18:36:17,693 — INFO — 20 out of 20 rows loaded.
+2025-08-12 18:36:17,693 — INFO — Loaded 20 rows to raw_student_data.cleaned_merged_student_data
+2025-08-12 18:36:17,693 — INFO — Starting feature engineering SQL execution in BigQuery
+2025-08-12 18:36:18,440 — INFO — Feature engineering SQL executed successfully, view updated.
+2025-08-12 18:36:18,440 — INFO — Pipeline completed successfully
+2025-08-12 18:36:55,576 — INFO — Starting Innovare Task Pipeline
+2025-08-12 18:36:55,576 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/student_demographics.csv
+2025-08-12 18:36:55,582 — INFO — Loaded data shape: (20, 10)
+2025-08-12 18:36:55,582 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/gradebook_export.csv
+2025-08-12 18:36:55,583 — INFO — Loaded data shape: (22, 5)
+2025-08-12 18:36:55,583 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/attendance_records.csv
+2025-08-12 18:36:55,585 — INFO — Loaded data shape: (23, 6)
+2025-08-12 18:36:55,585 — INFO — Starting data cleaning pipeline
+2025-08-12 18:36:55,585 — INFO — Cleaning demographics data
+2025-08-12 18:36:55,585 — INFO — Cleaning ELL status
+2025-08-12 18:36:55,587 — INFO — Cleaning FRL status
+2025-08-12 18:36:55,587 — INFO — Cleaning date column: DOB
+2025-08-12 18:36:55,613 — INFO — Data Summary:
+       student_id last_name first_name                            DOB gender ELL_Status IEP_Status FRL_Status enrollment_status notes
+count          20        20         20                             14     20         19         18         20                20    18
+unique         20        20         20                            NaN      3          3          2          3                 3     2
+top     SID-94321    Garcia       Alex                            NaN      F         No      False       TRUE            Active     \
+freq            1         1          1                            NaN     11         14         12         10                18    17
+mean          NaN       NaN        NaN  2009-06-11 06:51:25.714285824    NaN        NaN        NaN        NaN               NaN   NaN
+min           NaN       NaN        NaN            2009-01-30 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+25%           NaN       NaN        NaN            2009-03-27 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+50%           NaN       NaN        NaN            2009-06-01 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+75%           NaN       NaN        NaN            2009-07-29 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+max           NaN       NaN        NaN            2009-11-28 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+2025-08-12 18:36:55,614 — INFO — Cleaning gradebook data with parameterized grade ranges
+2025-08-12 18:36:55,616 — INFO — Dropped 1 rows due to invalid grades
+2025-08-12 18:36:55,616 — INFO — Cleaning attendance status
+2025-08-12 18:36:55,617 — INFO — Cleaning attendance date column
+2025-08-12 18:36:55,618 — INFO — Cleaning student_id column
+2025-08-12 18:36:55,619 — INFO — Cleaning student_id column
+2025-08-12 18:36:55,620 — INFO — Cleaning student_id column
+2025-08-12 18:36:55,620 — INFO — Data cleaning pipeline completed
+2025-08-12 18:36:55,620 — INFO — Starting data transformation pipeline
+2025-08-12 18:36:55,620 — INFO — Transforming demographics data
+2025-08-12 18:36:55,620 — INFO — Normalizing student_id
+2025-08-12 18:36:55,621 — INFO — Extracting start date
+2025-08-12 18:36:55,621 — INFO — Transforming grades data
+2025-08-12 18:36:55,621 — INFO — Normalizing student_id
+2025-08-12 18:36:55,622 — INFO — Converting grade to numeric
+2025-08-12 18:36:55,622 — INFO — Transforming attendance data
+2025-08-12 18:36:55,622 — INFO — Normalizing student_id
+2025-08-12 18:36:55,622 — INFO — Extracting start date
+2025-08-12 18:36:55,622 — INFO — Data transformation pipeline completed
+2025-08-12 18:36:55,622 — INFO — Running data quality checks
+2025-08-12 18:36:55,623 — WARNING — Duplicate student_id values found in Grades data: 16 duplicates
+2025-08-12 18:36:55,624 — INFO — Removed 10 duplicate rows from Grades data
+2025-08-12 18:36:55,624 — WARNING — Duplicate student_id values found in Attendance data: 16 duplicates
+2025-08-12 18:36:55,625 — INFO — Removed 10 duplicate rows from Attendance data
+2025-08-12 18:36:55,625 — INFO — All data quality checks passed
+2025-08-12 18:36:55,641 — INFO — Starting to join demographics, grades, and attendance data
+2025-08-12 18:36:55,641 — INFO — Starting to join demographics, grades, and attendance data
+2025-08-12 18:36:55,647 — INFO — Unified data shape after joins: (20, 20)
+2025-08-12 18:36:55,647 — INFO — Unified data shape after joins: (20, 20)
+2025-08-12 18:36:55,647 — INFO — Loading data to BigQuery table raw_student_data.cleaned_merged_student_data in project bamboo-zone-468620-k8
+2025-08-12 18:36:58,935 — INFO — 20 out of 20 rows loaded.
+2025-08-12 18:36:58,936 — INFO — Loaded 20 rows to raw_student_data.cleaned_merged_student_data
+2025-08-12 18:36:58,936 — INFO — Starting feature engineering SQL execution in BigQuery
+2025-08-12 18:36:59,644 — INFO — Feature engineering SQL executed successfully, view updated.
+2025-08-12 18:36:59,644 — INFO — Pipeline completed successfully
+2025-08-12 18:43:40,015 — INFO — Starting Innovare Task Pipeline
+2025-08-12 18:43:40,015 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/student_demographics.csv
+2025-08-12 18:43:40,021 — INFO — Loaded data shape: (20, 10)
+2025-08-12 18:43:40,021 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/gradebook_export.csv
+2025-08-12 18:43:40,022 — INFO — Loaded data shape: (22, 5)
+2025-08-12 18:43:40,022 — INFO — Loading data from /Users/riya/Desktop/Test-task/Innovare-Task/src/../data/attendance_records.csv
+2025-08-12 18:43:40,024 — INFO — Loaded data shape: (23, 6)
+2025-08-12 18:43:40,024 — INFO — Starting data cleaning pipeline
+2025-08-12 18:43:40,024 — INFO — Cleaning demographics data
+2025-08-12 18:43:40,024 — INFO — Cleaning ELL status
+2025-08-12 18:43:40,025 — INFO — Cleaning FRL status
+2025-08-12 18:43:40,025 — INFO — Cleaning date column: DOB
+2025-08-12 18:43:40,046 — INFO — Data Summary:
+       student_id last_name first_name                            DOB gender ELL_Status IEP_Status FRL_Status enrollment_status notes
+count          20        20         20                             14     20         19         18         20                20    18
+unique         20        20         20                            NaN      3          3          2          3                 3     2
+top     SID-94321    Garcia       Alex                            NaN      F         No      False       TRUE            Active     \
+freq            1         1          1                            NaN     11         14         12         10                18    17
+mean          NaN       NaN        NaN  2009-06-11 06:51:25.714285824    NaN        NaN        NaN        NaN               NaN   NaN
+min           NaN       NaN        NaN            2009-01-30 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+25%           NaN       NaN        NaN            2009-03-27 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+50%           NaN       NaN        NaN            2009-06-01 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+75%           NaN       NaN        NaN            2009-07-29 06:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+max           NaN       NaN        NaN            2009-11-28 00:00:00    NaN        NaN        NaN        NaN               NaN   NaN
+2025-08-12 18:43:40,047 — INFO — Cleaning gradebook data with parameterized grade ranges
+2025-08-12 18:43:40,049 — INFO — Dropped 1 rows due to invalid grades
+2025-08-12 18:43:40,049 — INFO — Cleaning attendance reason column
+2025-08-12 18:43:40,050 — INFO — Cleaning attendance date column
+2025-08-12 18:43:40,051 — INFO — Cleaning student_id column
+2025-08-12 18:43:40,052 — INFO — Cleaning student_id column
+2025-08-12 18:43:40,053 — INFO — Cleaning student_id column
+2025-08-12 18:43:40,054 — INFO — Data cleaning pipeline completed
+2025-08-12 18:43:40,054 — INFO — Starting data transformation pipeline
+2025-08-12 18:43:40,054 — INFO — Transforming demographics data
+2025-08-12 18:43:40,054 — INFO — Normalizing student_id
+2025-08-12 18:43:40,054 — INFO — Extracting start date
+2025-08-12 18:43:40,054 — INFO — Transforming grades data
+2025-08-12 18:43:40,054 — INFO — Normalizing student_id
+2025-08-12 18:43:40,055 — INFO — Converting grade to numeric
+2025-08-12 18:43:40,055 — INFO — Transforming attendance data
+2025-08-12 18:43:40,055 — INFO — Normalizing student_id
+2025-08-12 18:43:40,055 — INFO — Extracting start date
+2025-08-12 18:43:40,055 — INFO — Data transformation pipeline completed
+2025-08-12 18:43:40,056 — INFO — Running data quality checks
+2025-08-12 18:43:40,056 — WARNING — Duplicate student_id values found in Grades data: 16 duplicates
+2025-08-12 18:43:40,057 — INFO — Removed 10 duplicate rows from Grades data
+2025-08-12 18:43:40,057 — WARNING — Duplicate student_id values found in Attendance data: 16 duplicates
+2025-08-12 18:43:40,058 — INFO — Removed 10 duplicate rows from Attendance data
+2025-08-12 18:43:40,059 — INFO — All data quality checks passed
+2025-08-12 18:43:40,074 — INFO — Starting to join demographics, grades, and attendance data
+2025-08-12 18:43:40,075 — INFO — Starting to join demographics, grades, and attendance data
+2025-08-12 18:43:40,080 — INFO — Unified data shape after joins: (20, 20)
+2025-08-12 18:43:40,080 — INFO — Unified data shape after joins: (20, 20)
+2025-08-12 18:43:40,080 — INFO — Loading data to BigQuery table raw_student_data.cleaned_merged_student_data in project bamboo-zone-468620-k8
+2025-08-12 18:43:43,755 — INFO — 20 out of 20 rows loaded.
+2025-08-12 18:43:43,757 — INFO — Loaded 20 rows to raw_student_data.cleaned_merged_student_data
+2025-08-12 18:43:43,757 — INFO — Starting feature engineering SQL execution in BigQuery
+2025-08-12 18:43:44,543 — INFO — Feature engineering SQL executed successfully, view updated.
+2025-08-12 18:43:44,544 — INFO — Pipeline completed successfully

@@ -1,10 +1,12 @@
+import os
 from logger import logger
+from unify import unify_data
 from ingestion import load_data
 from cleaning import data_cleaning
+from bq_utils import load_to_bigquery
 from transformation import data_transform
 from quality_checks import data_quality_checks
 from feature_engineering import run_feature_engineering_query
-import os
 
 def main():
     logger.info("Starting Innovare Task Pipeline")
@@ -30,8 +32,32 @@ def main():
     # Data quality checks
     demographics_df, grades_df, attendance_df, quality_passed = data_quality_checks(demographics_df, grades_df, attendance_df)
 
+    print("#############  Cleaned Demographics Data:#############")
+    print(demographics_df.head())
+
+    print("\nCleaned Grades Data:")
+    print(grades_df.head())
+
+    print("\nCleaned Attendance Data:")
+    print(attendance_df.head())
+
     if not quality_passed:
         logger.error("Pipeline terminated due to data quality failure")
+        return
+
+    # Unify/join cleaned and transformed datasets
+    logger.info("Starting to join demographics, grades, and attendance data")
+    unified_df = unify_data(demographics_df, grades_df, attendance_df)
+    logger.info(f"Unified data shape after joins: {unified_df.shape}")
+
+    # Load unified data to BigQuery
+    project_id = 'bamboo-zone-468620-k8'  # Your GCP project ID
+    table_id = 'raw_student_data.cleaned_merged_student_data'  # dataset.table format
+
+    try:
+        load_to_bigquery(unified_df, table_id, project_id=project_id, if_exists='replace')
+    except Exception as e:
+        logger.error(f"Failed to load unified data to BigQuery: {e}")
         return
 
     # Run feature engineering SQL query in BigQuery

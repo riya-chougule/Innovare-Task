@@ -7,6 +7,7 @@ def normalize_student_id(df: pd.DataFrame) -> pd.DataFrame:
     df['student_id'] = df['student_id'].astype(str).str.strip().str.upper()
     return df
 
+
 def extract_start_date(df: pd.DataFrame) -> pd.DataFrame:
     logger.info("Extracting start date")
     if 'start_date' in df.columns:
