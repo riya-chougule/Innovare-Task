@@ -1,0 +1,4 @@
+numpy>=1.24.0
+pandas==2.3.1
+google-cloud-bigquery>=3.9.0
+pytz==2025.2

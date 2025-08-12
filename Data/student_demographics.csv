@@ -1,0 +1,21 @@
+student_id,last_name,first_name,DOB,gender,ELL_Status,IEP_Status,FRL_Status,enrollment_status,notes
+SID-94321,Garcia,Alex,2009-05-12,M,No,False,TRUE,Active,\
+SID-94322,Chen,Li,08/21/2009,F,Yes,False,TRUE,Active,\
+SID-94323,Williams,Jasmine,2009-02-28,F,No,True,FALSE,Active,\
+s-94324,Patel,Rohan,2009-11-01,M,No,False,TRUE,Active,\
+94325,Smith,Emily,2009-07-15,F,No,False,FALSE,Active,\
+SID-94326,Jones,Michael,10/05/2009,M,Yes,,TRUE,Active,\
+s-94327,Rodriguez,Sofia,2009-03-20,F,,True,TRUE,Active,\
+94328,Kim,David,2009-06-08,M,No,False,FALSE,Active,\
+SID-94329,Brown,Olivia,09/12/2009,F,No,False,TRUE,Active,\
+s-94330,Davis,William,2009-04-18,M,No,True,FALSE,Active,\
+SID-94331,Miller,Ava,2009-01-30,F,No,False,TRUE,Active,\
+s-94332,Wilson,James,12/22/2009,M,No,False,FALSE,Active,\
+94333,Moore,Isabella,2009-08-03,F,Yes,True,TRUE,Active,\
+SID-94334,Taylor,Sophia,2009-05-25,F,No,,FALSE,Withdrawn,\
+s-94335,Anderson,Liam,2009-10-11,M,No,False,TRUE,Active,behavior_flag=true; contact=parent_phone\
+94336,Thomas,Mia,2009-02-14,F,No,True,FALSE,Active,\
+SID-94337,Jackson,José,2009-07-02,M,No,False,FALSE,Active,\
+s-94338,White,Charlotte,2009-11-28,F,Yes,False,TRUE,Active,\
+94339,Harris,Lucas2009-01-09,M,No,TRUE,True,Active,\,
+SID-94340,Martin,Amelia,04/01/2009,F,No,False,FALSE,Active,
