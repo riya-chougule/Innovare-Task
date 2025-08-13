@@ -18,68 +18,47 @@ pip install -r requirements.txt
 
    <img width="1409" alt="Architectural Flow.jpeg" src="Architectural Flow.jpeg">
 
-   Data Ingestion
+  ## 🔄 Script Flow
 
-Reads three CSV files:
+a. **Data Ingestion**  
+   - Reads three CSV files:  
+     - `student_demographics.csv`  
+     - `gradebook_export.csv`  
+     - `attendance_records.csv`  
+   - Handles missing files or structural errors gracefully.
 
-student_demographics.csv
+b. **Data Cleaning**  
+   - Standardizes formats (dates, IDs, categorical values).  
+   - Handles missing or invalid values (e.g., wrong grades, blank fields).  
+   - Normalizes identifiers across datasets.
 
-gradebook_export.csv
+c. **Data Transformation**  
+   - Extracts and standardizes start dates.  
+   - Converts grades to numeric values.  
+   - Normalizes `student_id` formats.  
+   - Prepares unified schema for merging.
 
-attendance_records.csv
+d. **Data Quality Checks**  
+   - Identifies and removes duplicates.  
+   - Verifies column consistency.  
+   - Logs warnings for anomalies.
 
-Handles missing files or structural errors gracefully.
+e. **BigQuery Load**  
+   - Loads cleaned & transformed data into a **BigQuery table**:  
+     `fot_student_features`.
 
-Data Cleaning
+f. **Feature Engineering (BigQuery)**  
+   - Executes SQL to calculate for each student:  
+     - `credits_earned_semester`  
+     - `core_course_failures`  
+     - `attendance_percentage`  
+     - `behavioral_flags`  
+   - Saves final results in BigQuery for downstream use.
 
-Standardizes formats (dates, IDs, categorical values).
+g. **Logging & Error Handling**  
+   - Detailed logs for every stage.  
+   - Errors are caught and reported without halting earlier stages unnecessarily.
 
-Handles missing or invalid values (e.g., wrong grades, blank fields).
-
-Normalizes identifiers across datasets.
-
-Data Transformation
-
-Extracts and standardizes start dates.
-
-Converts grades to numeric values.
-
-Normalizes student_id formats.
-
-Prepares unified schema for merging.
-
-Data Quality Checks
-
-Identifies and removes duplicates.
-
-Verifies column consistency.
-
-Logs warnings for anomalies.
-
-BigQuery Load
-
-Loads cleaned & transformed data into a BigQuery table:
-fot_student_features.
-
-Feature Engineering (BigQuery)
-
-Executes SQL to calculate for each student:
-
-credits_earned_semester
-
-core_course_failures
-
-attendance_percentage
-
-behavioral_flags
-
-Saves final results in BigQuery for downstream use.
-
-Logging & Error Handling
-
-Detailed logs for every stage.
-
-Errors are caught and reported without halting earlier stages unnecessarily.
 
 
 
