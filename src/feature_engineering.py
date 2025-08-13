@@ -11,7 +11,7 @@ def run_feature_engineering_query():
     SELECT
       student_id,
       SUM(total_credits) AS credits_earned_semester,
-      COUNTIF(avg_grade_numeric < 65) AS core_course_failures,
+      COUNTIF(avg_grade_numeric < 59) AS core_course_failures,
       SAFE_DIVIDE(SUM(Present), NULLIF(SUM(Present) + SUM(Absent) + SUM(Tardy), 0)) AS attendance_percentage,
       MAX(CASE WHEN LOWER(notes) LIKE '%behavior_flag=true%' THEN 1 ELSE 0 END) AS behavioral_flag
     FROM
