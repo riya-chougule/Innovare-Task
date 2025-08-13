@@ -20,6 +20,6 @@ typing-extensions==4.7.1
 
 # Metadata and packaging
 packaging==24.2
-pyarrow>=13.0.0            # update to >=13.0.0 per db-dtypes requirement
+#pyarrow>=13.0.0            # update to >=13.0.0 per db-dtypes requirement
 zipp==3.15.0
 importlib-metadata==6.8.0
