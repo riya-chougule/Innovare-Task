@@ -62,8 +62,8 @@ g. **Logging & Error Handling**
 
 
 
-6. Run pipeline:   
+5. Run pipeline:   
 ```bash
 python src/main.py
 ```
-5. Logs are saved in logs/app.log
+6. Logs are saved in logs/app.log
