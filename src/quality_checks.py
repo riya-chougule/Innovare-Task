@@ -2,6 +2,19 @@ from logger import logger
 import pandas as pd
 
 def data_quality_checks(demographics_df, grades_df, attendance_df):
+
+    def data_quality_checks(demographics_df, grades_df, attendance_df):
+        """
+    Performs basic data quality validation on student datasets.
+
+    Steps:
+    1. Checks for duplicate student records in grades and attendance.
+       - Logs a warning if duplicates are found.
+       - Removes duplicates, keeping only the first occurrence.
+    2. Optionally, additional checks can be added here.
+    3. Returns cleaned datasets and a boolean flag indicating oversll quality.
+    """
+
     logger.info("Running data quality checks")
 
     quality_passed = True

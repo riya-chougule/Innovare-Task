@@ -2,7 +2,7 @@ import os
 from logger import logger
 from unify import unify_data
 from ingestion import load_data
-from cleaning import data_cleaning
+from cleaning import data_cleaning, clean_course_details
 from bq_utils import load_to_bigquery
 from transformation import data_transform
 from quality_checks import data_quality_checks
@@ -26,11 +26,16 @@ def main():
     # Clean data
     demographics_df, grades_df, attendance_df = data_cleaning(demographics_df, grades_df, attendance_df)
 
+    # Clean course_details
+    grades_df = clean_course_details(grades_df)
+
     # Transform data
     demographics_df, grades_df, attendance_df = data_transform(demographics_df, grades_df, attendance_df)
 
     # Data quality checks
-    demographics_df, grades_df, attendance_df, quality_passed = data_quality_checks(demographics_df, grades_df, attendance_df)
+    demographics_df, grades_df, attendance_df, quality_passed = data_quality_checks(
+        demographics_df, grades_df, attendance_df
+    )
 
     print("#############  Cleaned Demographics Data:#############")
     print(demographics_df.head())
@@ -62,7 +67,7 @@ def main():
 
     # Run feature engineering SQL query in BigQuery
     try:
-        run_feature_engineering_query()
+        run_feature_engineering_query(failure_cutoff=60)
     except Exception as e:
         logger.error(f"Feature engineering step failed: {e}")
         return

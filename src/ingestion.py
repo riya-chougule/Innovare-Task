@@ -2,6 +2,7 @@ from logger import logger
 import pandas as pd
 
 def load_data(file_path: str) -> pd.DataFrame:
+    """Read a CSV into a DataFrame and log its shape."""
     logger.info(f"Loading data from {file_path}")
     try:
         df = pd.read_csv(file_path)
