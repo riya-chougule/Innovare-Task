@@ -2,11 +2,18 @@ import os
 from logger import logger
 from unify import unify_data
 from ingestion import load_data
-from cleaning import data_cleaning, clean_course_details
-from bq_utils import load_to_bigquery
+from cleaning import data_cleaning, clean_course_details,clean_names_and_dob, clean_demographics, clean_attendance_dates
+
 from transformation import data_transform
 from quality_checks import data_quality_checks
 from feature_engineering import run_feature_engineering_query
+
+
+
+def print_sample_demographics(df, title=""):
+    """Print first 25 rows of the demographics DataFrame with all columns."""
+    print(f"\n{title}")
+    print(df.head(45))
 
 def main():
     logger.info("Starting Innovare Task Pipeline")
@@ -23,8 +30,16 @@ def main():
     grades_df = load_data(grades_file)
     attendance_df = load_data(attendance_file)
 
+    # Print original names before cleaning
+    print_sample_demographics(demographics_df, title="Demographics BEFORE cleaning")
     # Clean data
+    demographics_df = clean_names_and_dob(demographics_df)
+    demographics_df = clean_demographics(demographics_df)
     demographics_df, grades_df, attendance_df = data_cleaning(demographics_df, grades_df, attendance_df)
+
+
+    # Print demographics after cleaning
+    print_sample_demographics(demographics_df, title="Demographics AFTER cleaning")
 
     # Clean course_details
     grades_df = clean_course_details(grades_df)
@@ -37,14 +52,11 @@ def main():
         demographics_df, grades_df, attendance_df
     )
 
-    print("#############  Cleaned Demographics Data:#############")
-    print(demographics_df.head())
-
     print("\nCleaned Grades Data:")
-    print(grades_df.head())
+    print(grades_df.head(45))
 
     print("\nCleaned Attendance Data:")
-    print(attendance_df.head())
+    print(attendance_df.head(45))
 
     if not quality_passed:
         logger.error("Pipeline terminated due to data quality failure")
@@ -60,6 +72,7 @@ def main():
     table_id = 'raw_student_data.cleaned_merged_student_data'  # dataset.table format
 
     try:
+        from bq_utils import load_to_bigquery
         load_to_bigquery(unified_df, table_id, project_id=project_id, if_exists='replace')
     except Exception as e:
         logger.error(f"Failed to load unified data to BigQuery: {e}")

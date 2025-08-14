@@ -2,46 +2,38 @@ from logger import logger
 import pandas as pd
 
 def data_quality_checks(demographics_df, grades_df, attendance_df):
-
-    def data_quality_checks(demographics_df, grades_df, attendance_df):
-        """
+    """
     Performs basic data quality validation on student datasets.
 
     Steps:
-    1. Checks for duplicate student records in grades and attendance.
-       - Logs a warning if duplicates are found.
-       - Removes duplicates, keeping only the first occurrence.
-    2. Optionally, additional checks can be added here.
-    3. Returns cleaned datasets and a boolean flag indicating oversll quality.
+    1. Checks for duplicate records based on primary keys (entry_id, record_id).
+    2. Logs a warning if duplicates are found.
+    3. Returns cleaned datasets and a boolean flag indicating overall quality.
     """
 
     logger.info("Running data quality checks")
 
     quality_passed = True
 
-    # Check duplicates in grades
-    duplicates_grades = grades_df.duplicated(subset=['student_id'], keep=False)
+    # Check duplicates in grades based on entry_id
+    duplicates_grades = grades_df.duplicated(subset=['entry_id'], keep=False)
     if duplicates_grades.any():
         count = duplicates_grades.sum()
-        logger.warning(f"Duplicate student_id values found in Grades data: {count} duplicates")
+        logger.warning(f"Duplicate entry_id values found in Grades data: {count} duplicates")
         before_count = len(grades_df)
-        grades_df = grades_df.drop_duplicates(subset=['student_id'], keep='first')
+        grades_df = grades_df.drop_duplicates(subset=['entry_id'], keep='first')
         after_count = len(grades_df)
         logger.info(f"Removed {before_count - after_count} duplicate rows from Grades data")
-        # Depending on policy, we could also mark quality_passed = False here if duplicates are critical
 
-    # Check duplicates in attendance
-    duplicates_attendance = attendance_df.duplicated(subset=['student_id'], keep=False)
+    # Check duplicates in attendance based on record_id
+    duplicates_attendance = attendance_df.duplicated(subset=['record_id'], keep=False)
     if duplicates_attendance.any():
         count = duplicates_attendance.sum()
-        logger.warning(f"Duplicate student_id values found in Attendance data: {count} duplicates")
+        logger.warning(f"Duplicate record_id values found in Attendance data: {count} duplicates")
         before_count = len(attendance_df)
-        attendance_df = attendance_df.drop_duplicates(subset=['student_id'], keep='first')
+        attendance_df = attendance_df.drop_duplicates(subset=['record_id'], keep='first')
         after_count = len(attendance_df)
         logger.info(f"Removed {before_count - after_count} duplicate rows from Attendance data")
-        # quality_passed = False if duplicates considered critical
-
-    # Here you can add any other quality checks, setting quality_passed = False if needed
 
     if quality_passed:
         logger.info("All data quality checks passed")

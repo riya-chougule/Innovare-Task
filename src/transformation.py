@@ -2,7 +2,7 @@ from logger import logger
 import pandas as pd
 
 # ---------------------------------------------------------
-# Helper functions
+# Helper functioms
 # ---------------------------------------------------------
 
 def normalize_student_id(df: pd.DataFrame) -> pd.DataFrame:
