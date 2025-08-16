@@ -66,6 +66,7 @@ def main():
     logger.info("Starting to join demographics, grades, and attendance data")
     unified_df = unify_data(demographics_df, grades_df, attendance_df)
     logger.info(f"Unified data shape after joins: {unified_df.shape}")
+    unified_df.columns = unified_df.columns.str.strip().str.replace(r'[^A-Za-z0-9_]', '_', regex=True)
 
     # Load unified data to BigQuery
     project_id = 'bamboo-zone-468620-k8'  # Your GCP project ID
