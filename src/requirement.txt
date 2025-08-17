@@ -32,6 +32,7 @@ requests==2.32.4
 requests-oauthlib==2.0.0
 rsa==4.9.1
 six==1.17.0
+striprtf==0.0.29
 typing_extensions==4.7.1
 tzdata==2025.2
 urllib3==2.5.0
