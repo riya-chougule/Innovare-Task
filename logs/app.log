@@ -1878,3 +1878,216 @@ max           NaN       NaN        NaN            2009-11-28 00:00:00    NaN    
 2025-08-13 12:15:20,716 — INFO — Starting feature engineering SQL execution in BigQuery
 2025-08-13 12:15:21,610 — INFO — Feature engineering SQL executed successfully, view updated.
 2025-08-13 12:15:21,610 — INFO — Pipeline completed successfully
+2025-08-16 22:43:32,141 — INFO — Starting Innovare Task Pipeline
+2025-08-16 22:43:32,141 — INFO — Loading data from /Users/riya/Desktop/Error_handling/Innovare-Task/src/../data/student_demographics.csv
+2025-08-16 22:43:32,146 — INFO — Loaded data shape: (20, 1)
+2025-08-16 22:43:32,146 — INFO — Loading data from /Users/riya/Desktop/Error_handling/Innovare-Task/src/../data/gradebook_export.csv
+2025-08-16 22:43:32,148 — INFO — Loaded data shape: (22, 1)
+2025-08-16 22:43:32,148 — INFO — Loading data from /Users/riya/Desktop/Error_handling/Innovare-Task/src/../data/attendance_records.csv
+2025-08-16 22:43:32,150 — INFO — Loaded data shape: (23, 1)
+2025-08-16 22:52:57,236 — INFO — Starting Innovare Task Pipeline
+2025-08-16 22:52:57,237 — INFO — Loading data from /Users/riya/Desktop/Error_handling/Innovare-Task/src/../data/student_demographics.csv
+2025-08-16 22:52:57,242 — INFO — Loaded data shape: (20, 10)
+2025-08-16 22:52:57,242 — INFO — Loading data from /Users/riya/Desktop/Error_handling/Innovare-Task/src/../data/gradebook_export.csv
+2025-08-16 22:52:57,244 — INFO — Loaded data shape: (22, 5)
+2025-08-16 22:52:57,244 — INFO — Loading data from /Users/riya/Desktop/Error_handling/Innovare-Task/src/../data/attendance_records.csv
+2025-08-16 22:52:57,247 — INFO — Loaded data shape: (23, 6)
+2025-08-16 22:52:57,262 — INFO — Cleaning demographics dataset
+2025-08-16 22:52:57,278 — INFO — Cleaning gender column
+2025-08-16 22:52:57,280 — INFO — Cleaning student_id column
+2025-08-16 22:52:57,282 — INFO — Starting full data cleaning pipeline
+2025-08-16 22:52:57,284 — INFO — Cleaning demographics dataset
+2025-08-16 22:52:57,290 — INFO — Cleaning gender column
+2025-08-16 22:52:57,291 — INFO — Cleaning student_id column
+2025-08-16 22:52:57,297 — INFO — Cleaning gradebook data with parameterized grade ranges
+2025-08-16 22:52:57,298 — INFO — Cleaning student_id column
+2025-08-16 22:52:57,299 — INFO — Cleaning attendance reason column
+2025-08-16 22:52:57,300 — INFO — Cleaning attendance date column
+2025-08-16 22:52:57,303 — WARNING — 1 attendance dates could not be parsed and set to NaT
+2025-08-16 22:52:57,303 — INFO — Cleaning student_id column
+2025-08-16 22:52:57,304 — INFO — Data cleaning pipeline completed
+2025-08-16 22:52:57,318 — INFO — Starting data transformation pipeline
+2025-08-16 22:52:57,318 — INFO — Transforming demographics data
+2025-08-16 22:52:57,318 — INFO — Normalizing student_id
+2025-08-16 22:52:57,319 — INFO — Extracting start date
+2025-08-16 22:52:57,319 — INFO — Handling missing values for demographics
+2025-08-16 22:52:57,321 — INFO — Missing values before handling in demographics:
+student_id           0
+last_name            0
+first_name           0
+DOB                  5
+gender               1
+ELL_Status           1
+IEP_Status           2
+FRL_Status           1
+enrollment_status    0
+notes                0
+dtype: int64
+2025-08-16 22:52:57,333 — INFO — Missing values after handling in demographics:
+student_id            0
+last_name             0
+first_name            0
+DOB                   5
+gender                0
+ELL_Status            0
+IEP_Status            0
+FRL_Status            0
+enrollment_status     0
+notes                19
+dtype: int64
+2025-08-16 22:52:57,333 — INFO — Transforming grades data
+2025-08-16 22:52:57,333 — INFO — Normalizing student_id
+2025-08-16 22:52:57,334 — INFO — Converting grade to numeric
+2025-08-16 22:52:57,335 — INFO — Handling missing values for grades
+2025-08-16 22:52:57,337 — INFO — Missing values before handling in grades:
+entry_id          0
+student_id        0
+course_details    0
+grade             0
+credits_earned    0
+grade_numeric     2
+dtype: int64
+2025-08-16 22:52:57,342 — INFO — Missing values after handling in grades:
+entry_id          0
+student_id        0
+course_details    0
+grade             1
+credits_earned    0
+grade_numeric     0
+dtype: int64
+2025-08-16 22:52:57,342 — INFO — Transforming attendance data
+2025-08-16 22:52:57,342 — INFO — Normalizing student_id
+2025-08-16 22:52:57,342 — INFO — Extracting start date
+2025-08-16 22:52:57,343 — INFO — Handling missing values for attendance
+2025-08-16 22:52:57,348 — INFO — Missing values before handling in attendance:
+record_id             0
+student_id            0
+date                  1
+period               22
+attendance_status     0
+reason                0
+dtype: int64
+2025-08-16 22:52:57,353 — INFO — Missing values after handling in attendance:
+record_id             0
+student_id            0
+date                  1
+period               22
+attendance_status     0
+reason               18
+dtype: int64
+2025-08-16 22:52:57,353 — INFO — Data transformation pipeline completed
+2025-08-16 22:52:57,353 — INFO — Running data quality checks
+2025-08-16 22:52:57,354 — INFO — All data quality checks passed
+2025-08-16 22:52:57,370 — INFO — Starting to join demographics, grades, and attendance data
+2025-08-16 22:52:57,370 — INFO — Starting to join demographics, grades, and attendance data
+2025-08-16 22:52:57,383 — INFO — Unified data shape after joins: (62, 20)
+2025-08-16 22:52:57,383 — INFO — Unified data shape after joins: (62, 20)
+2025-08-16 22:52:57,392 — INFO — Loading data to BigQuery table raw_student_data.cleaned_merged_student_data in project bamboo-zone-468620-k8
+2025-08-16 22:53:04,210 — INFO — 62 out of 62 rows loaded.
+2025-08-16 22:53:04,211 — INFO — Loaded 62 rows to raw_student_data.cleaned_merged_student_data
+2025-08-16 22:53:04,212 — INFO — Running feature engineering query in BigQuery with failure cutoff = 60
+2025-08-16 22:53:05,173 — INFO — Feature view updated successfully.
+2025-08-16 22:53:05,174 — INFO — Pipeline completed successfully
+2025-08-16 23:08:14,623 — INFO — Starting Innovare Task Pipeline
+2025-08-16 23:08:14,636 — INFO — Loading data from /Users/riya/Desktop/Error_handling/Innovare-Task/src/../data/student_demographics.csv
+2025-08-16 23:08:14,641 — INFO — Loaded data shape: (20, 10)
+2025-08-16 23:08:14,641 — INFO — Loading data from /Users/riya/Desktop/Error_handling/Innovare-Task/src/../data/gradebook_export.csv
+2025-08-16 23:08:14,642 — INFO — Loaded data shape: (22, 5)
+2025-08-16 23:08:14,643 — INFO — Loading data from /Users/riya/Desktop/Error_handling/Innovare-Task/src/../data/attendance_records.csv
+2025-08-16 23:08:14,645 — INFO — Loaded data shape: (23, 6)
+2025-08-16 23:08:14,664 — INFO — Cleaning demographics dataset
+2025-08-16 23:08:14,677 — INFO — Cleaning gender column
+2025-08-16 23:08:14,680 — INFO — Cleaning student_id column
+2025-08-16 23:08:14,683 — INFO — Starting full data cleaning pipeline
+2025-08-16 23:08:14,685 — INFO — Cleaning demographics dataset
+2025-08-16 23:08:14,692 — INFO — Cleaning gender column
+2025-08-16 23:08:14,693 — INFO — Cleaning student_id column
+2025-08-16 23:08:14,698 — INFO — Cleaning gradebook data with parameterized grade ranges
+2025-08-16 23:08:14,699 — INFO — Cleaning student_id column
+2025-08-16 23:08:14,700 — INFO — Cleaning attendance reason column
+2025-08-16 23:08:14,701 — INFO — Cleaning attendance date column
+2025-08-16 23:08:14,704 — WARNING — 1 attendance dates could not be parsed and set to NaT
+2025-08-16 23:08:14,704 — INFO — Cleaning student_id column
+2025-08-16 23:08:14,705 — INFO — Data cleaning pipeline completed
+2025-08-16 23:08:14,718 — INFO — Starting data transformation pipeline
+2025-08-16 23:08:14,718 — INFO — Transforming demographics data
+2025-08-16 23:08:14,718 — INFO — Normalizing student_id
+2025-08-16 23:08:14,719 — INFO — Extracting start date
+2025-08-16 23:08:14,719 — INFO — Handling missing values for demographics
+2025-08-16 23:08:14,721 — INFO — Missing values before handling in demographics:
+student_id           0
+last_name            0
+first_name           0
+DOB                  5
+gender               1
+ELL_Status           1
+IEP_Status           2
+FRL_Status           1
+enrollment_status    0
+notes                0
+dtype: int64
+2025-08-16 23:08:14,729 — INFO — Missing values after handling in demographics:
+student_id            0
+last_name             0
+first_name            0
+DOB                   5
+gender                0
+ELL_Status            0
+IEP_Status            0
+FRL_Status            0
+enrollment_status     0
+notes                19
+dtype: int64
+2025-08-16 23:08:14,730 — INFO — Transforming grades data
+2025-08-16 23:08:14,730 — INFO — Normalizing student_id
+2025-08-16 23:08:14,730 — INFO — Converting grade to numeric
+2025-08-16 23:08:14,731 — INFO — Handling missing values for grades
+2025-08-16 23:08:14,733 — INFO — Missing values before handling in grades:
+entry_id          0
+student_id        0
+course_details    0
+grade             0
+credits_earned    0
+grade_numeric     2
+dtype: int64
+2025-08-16 23:08:14,738 — INFO — Missing values after handling in grades:
+entry_id          0
+student_id        0
+course_details    0
+grade             1
+credits_earned    0
+grade_numeric     0
+dtype: int64
+2025-08-16 23:08:14,738 — INFO — Transforming attendance data
+2025-08-16 23:08:14,738 — INFO — Normalizing student_id
+2025-08-16 23:08:14,739 — INFO — Extracting start date
+2025-08-16 23:08:14,739 — INFO — Handling missing values for attendance
+2025-08-16 23:08:14,744 — INFO — Missing values before handling in attendance:
+record_id             0
+student_id            0
+date                  1
+period               22
+attendance_status     0
+reason                0
+dtype: int64
+2025-08-16 23:08:14,749 — INFO — Missing values after handling in attendance:
+record_id             0
+student_id            0
+date                  1
+period               22
+attendance_status     0
+reason               18
+dtype: int64
+2025-08-16 23:08:14,749 — INFO — Data transformation pipeline completed
+2025-08-16 23:08:14,749 — INFO — Running data quality checks
+2025-08-16 23:08:14,751 — INFO — All data quality checks passed
+2025-08-16 23:08:14,768 — INFO — Starting to join demographics, grades, and attendance data
+2025-08-16 23:08:14,768 — INFO — Starting to join demographics, grades, and attendance data
+2025-08-16 23:08:14,780 — INFO — Unified data shape after joins: (62, 20)
+2025-08-16 23:08:14,780 — INFO — Unified data shape after joins: (62, 20)
+2025-08-16 23:08:14,788 — INFO — Loading data to BigQuery table raw_student_data.cleaned_merged_student_data in project bamboo-zone-468620-k8
+2025-08-16 23:08:23,835 — INFO — 62 out of 62 rows loaded.
+2025-08-16 23:08:23,836 — INFO — Loaded 62 rows to raw_student_data.cleaned_merged_student_data
+2025-08-16 23:08:23,836 — INFO — Running feature engineering query in BigQuery with failure cutoff = 60
+2025-08-16 23:08:24,631 — INFO — Feature view updated successfully.
+2025-08-16 23:08:24,632 — INFO — Pipeline completed successfully

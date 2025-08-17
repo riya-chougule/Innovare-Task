@@ -3,6 +3,8 @@ numpy==1.24.4                  # bump to 1.24.x or higher
 pandas==2.0.3
 pytz==2023.3
 pandas-gbq>=0.19.0
+striprtf>=0.0.9
+
 
 # Logging
 logging==0.4.9.6
